@@ -1,3 +1,6 @@
+After adding this project run:
+npm install in the terminal to install the needed modules
+
 # WasteProcessingApplication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
