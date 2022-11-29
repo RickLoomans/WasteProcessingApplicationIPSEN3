@@ -2,6 +2,7 @@ export class ResultaatModel {
   public static instance:ResultaatModel;
   private _apiOutput:string;
   private _description:string;
+  private _hasProcessed: boolean = false;
 
 
   constructor(apiOutput: string, description: string) {
@@ -31,6 +32,7 @@ export class ResultaatModel {
         this._description = 'Niemand wil de reststof breng de stof naar de juiste afvalcategorie';
     }
     console.log(this.apiOutput + " what verwerken gives")
+    this._hasProcessed = !this._hasProcessed;
   }
 
 
@@ -40,5 +42,9 @@ export class ResultaatModel {
 
   get description(): string {
     return this._description;
+  }
+
+  get hasProcessed(): boolean {
+    return this._hasProcessed;
   }
 }

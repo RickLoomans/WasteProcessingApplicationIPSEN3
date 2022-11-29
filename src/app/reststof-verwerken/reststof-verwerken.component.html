@@ -1,18 +1,11 @@
 <body id="background">
   <main class="container">
     <section class="row">
-      <h1>Reststof Verwerken</h1>
-      <label>Artikelnummer</label>
-      <input type="text" class="input">
-      <label>Klant ID</label>
-      <input type="text" class="input">
-      <label>Metrage</label>
-      <input type="text" class="input">
-      <label>Magazijn ID</label>
-      <input type="text" class="input">
-      <button (click)="verwerken()" class="btn">Verwerk</button>
- 
-      <app-resultaat-verwerken-stof *ngIf="myVar"></app-resultaat-verwerken-stof>
+      <app-verwerken-input *ngIf="!hasProcessed"></app-verwerken-input>
+      <app-resultaat-verwerken-stof *ngIf="hasProcessed"></app-resultaat-verwerken-stof>
+      <button *ngIf="!hasProcessed" (click)="verwerken()" class="btn">Verwerk</button>
+      <button *ngIf="hasProcessed" (click)="showLabel()" class="btn">Label PDF</button>
+
     </section>
   </main>
   <img class=image1 src="\assets\images\undraw_personal_file_re_5joy.svg" alt="decorative image">
