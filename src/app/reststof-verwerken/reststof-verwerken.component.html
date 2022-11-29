@@ -1,0 +1,16 @@
+<body id="background">
+  <main class="container">
+    <section class="row">
+      <label>first</label>
+      <input type="text" class="input">
+      <label>second</label>
+      <input type="text" class="input">
+      <label>third</label>
+      <input type="text" class="input">
+      <label>fourth</label>
+      <input type="text" class="input">
+      <button (click)="verwerken()" class="btn">Send</button>
+      <app-resultaat-verwerken-stof *ngIf="myVar"></app-resultaat-verwerken-stof>
+    </section>
+  </main>
+</body>

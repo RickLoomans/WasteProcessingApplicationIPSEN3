@@ -1,0 +1,28 @@
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 17px;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: lightgray;
+}
+
+#background {
+  background-color: gray;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin-top: 10px;
+  background-color: orange;
+  font-size: 1.2em;
+  font-weight: bold;
+}

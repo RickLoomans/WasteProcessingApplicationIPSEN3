@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WasteProcessingApplication';
+  myVar = false;
+
+  button() {
+    this.myVar = !this.myVar;
+  }
 }
