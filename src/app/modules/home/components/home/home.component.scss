@@ -1,0 +1,66 @@
+.home {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  padding: 0px 25px;
+  box-sizing: border-box;
+  position: relative;
+
+  h2 {
+    font-weight: lighter;
+    color: #002147;
+    margin: 0;
+  }
+
+  .date {
+    margin: 0;
+    color: #AEB2B6;
+    font-size: 0.8em;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.quick-actions {
+  margin-top: 50px;
+  z-index: 1;
+
+  h5 {
+    margin: 0;
+  }
+
+  .actions {
+
+    button {
+      display: block;
+      width: 300px;
+      height: 45px;
+      margin-top: 15px;
+      outline: none;
+      border: none;
+      background-color: white;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      border-radius: 5px;
+      text-align: left;
+      font-weight: 600;
+
+      i {
+        width: 50px;
+        text-align: center;
+        font-size: 1.3em;
+        color: #4ac6b5;
+      }
+    }
+  }
+}
+
+.illustration {
+  position: fixed;
+  bottom: 0;
+  right: 25px;
+  z-index: 0;
+  width: 250px;
+}

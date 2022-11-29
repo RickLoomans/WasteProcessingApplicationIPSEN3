@@ -1,0 +1,17 @@
+.layout {
+  display: grid;
+  grid-template-columns: 85px auto;
+  min-height: 100vh;
+
+  .left {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+  }
+
+  .right {
+    background-color: #EEF2FA;
+    height: 100%;
+    width: 100%;
+  }
+}
