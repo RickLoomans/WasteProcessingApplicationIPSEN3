@@ -1,3 +1,6 @@
+import { ReststofModule } from './modules/reststof/reststof.module';
+import { HomeModule } from './modules/home/home.module';
+import { CoreModule } from './modules/core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +13,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
+    HomeModule,
+    ReststofModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
