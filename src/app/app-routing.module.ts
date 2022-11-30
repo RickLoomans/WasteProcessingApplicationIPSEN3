@@ -2,7 +2,7 @@ import { HomeComponent } from './modules/home/components/home/home.component';
 import { LayoutComponent } from './modules/core/components/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReststofVerwerkenComponent } from './modules/reststof/components/reststof-verwerken/reststof-verwerken.component';
+import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
