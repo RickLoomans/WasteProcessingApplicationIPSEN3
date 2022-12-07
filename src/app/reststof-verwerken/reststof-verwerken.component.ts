@@ -15,11 +15,12 @@ export class ReststofVerwerkenComponent {
   @ViewChild(VerwerkenInputComponent) input!: VerwerkenInputComponent;
 
   verwerken() {
+    this.resultaatModel = ResultaatModel.getInstance();
     console.log(this.input.metrage);
+    this.resultaatModel.metrage = this.input.metrage;
 
     this.apiOut = Math.random() > 0.5 ? 'magazijn' : 'retour';
     this.apiOut = Math.random() > 0.24 ? this.apiOut : 'Afvalcategorie: A1';
-    this.resultaatModel = ResultaatModel.getInstance();
     this.resultaatModel.processApiRespone(this.apiOut);
     this.hasProcessed = true;
   }
