@@ -8,6 +8,7 @@
         <button *ngIf="hasProcessed" (click)="showLabel()" class="btn">Label PDF</button>
       </div>
     </section>
+    <div class="spacer"><p><br></p></div>
     <section *ngIf="hasProcessed" class="container">
       <app-resultaat-details *ngIf="hasProcessed"></app-resultaat-details>
     </section>
