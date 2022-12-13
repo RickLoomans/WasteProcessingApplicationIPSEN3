@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.LoginInput{
+  margin-top: 200px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+
+  background-color: white;
+    
+}
+H1{
+        font-size: 40px;
+        margin-right: 130px;
+        margin-left: 130px;
+}
+p{
+    margin-right: 130px;
+    margin-left: 100px;
+}
+
+input {
+    width: 50%;
+    margin-left: 40px;
+    height: 30px;
+    
+    margin-bottom: 20px;
+}
+
+button{
+  color: white;
+  margin-top: 20px;
+  background-color: #4bc8b6;
+  font-size: 1.2em;
+  font-weight: bold;
+  height: 50px;
+  width: 200px;
+  border: solid 1px;
+  border-radius: 10px;
+  margin-left: 80px;
+}
+  

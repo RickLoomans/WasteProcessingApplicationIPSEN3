@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
 import { ResultaatVerwerkenStofComponent } from './reststof-verwerken/resultaat-verwerken-stof/resultaat-verwerken-stof.component';
 import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/verwerken-input.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReststofVerwerkenComponent,
     ResultaatVerwerkenStofComponent,
-    VerwerkenInputComponent
+    VerwerkenInputComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
