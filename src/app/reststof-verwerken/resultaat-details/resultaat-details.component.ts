@@ -10,7 +10,6 @@ import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
 export class ResultaatDetailsComponent {
   resultaatModel: ResultaatModel | undefined;
   metrage:number = 3;
-  test = new ReststofVerwerkenComponent();
 
   ngOnInit(): void {
     this.resultaatModel = ResultaatModel.getInstance();

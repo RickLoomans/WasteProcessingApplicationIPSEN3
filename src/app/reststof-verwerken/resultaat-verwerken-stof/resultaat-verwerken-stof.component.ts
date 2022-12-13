@@ -11,7 +11,6 @@ export class ResultaatVerwerkenStofComponent {
   resultaatModel: ResultaatModel | undefined;
   header:string = '';
   desc:string = '';
-  test = new ReststofVerwerkenComponent();
 
   ngOnInit(): void {
     this.resultaatModel = ResultaatModel.getInstance();
