@@ -2,15 +2,16 @@
   <main>
     <section class="container">
       <div class="row">
-        <app-verwerken-input *ngIf="!hasProcessed"></app-verwerken-input>
+        <app-verwerken-input></app-verwerken-input>
         <app-resultaat-verwerken-stof *ngIf="hasProcessed"></app-resultaat-verwerken-stof>
-        <button *ngIf="!hasProcessed" (click)="verwerken()" class="btn">Verwerk</button>
+        
         <button *ngIf="hasProcessed" (click)="showLabel()" class="btn">Label PDF</button>
       </div>
     </section>
     <section *ngIf="hasProcessed" class="container">
       <app-resultaat-details *ngIf="hasProcessed"></app-resultaat-details>
     </section>
+ 
   </main>
   <img class=image1 src="\assets\images\undraw_personal_file_re_5joy.svg" alt="decorative image">
 </body>

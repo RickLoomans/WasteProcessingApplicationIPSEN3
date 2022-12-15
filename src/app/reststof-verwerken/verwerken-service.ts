@@ -1,22 +1,22 @@
-import {Injectable} from "@angular/core";
+import {Injectable, Input, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {VerwerkenModel} from "./verwerken-model";
 
+
 @Injectable({providedIn: 'root'})
-export class VerwerkenService {
+export class VerwerkenService implements OnInit{
+ // @Input() data: {artikelnummer: string; metrage: number; klantId: number; magazijnId: number};
 
   constructor(private http: HttpClient) { }
 
-  verwerkReststof(artikelnr: string, klantId: number, magazijnId: number, metrage: number) {
-    const postData : VerwerkenModel = { artikelnr: artikelnr, klantId: klantId, magazijnId: magazijnId, metrage: metrage}
-    console.log(postData)
+  ngOnInit(): void {
+  }
 
-    this.http.post<{ response: string[] }>('http://localhost:8080/reststofverwerken', postData
-    )
-      .subscribe(responseData => {
-        console.log(responseData.response[0])
-      });
+  verwerkReststof(artikelnr: string, klantId: number, metrage: number, magazijnId: number) {
+    const postData : VerwerkenModel = {artikelnr: artikelnr, klantId: klantId, metrage: metrage, magazijnId: magazijnId}
+    console.log(magazijnId);
+    return this.http.post<{ response: string[] }>('http://localhost:8080/reststofverwerken', postData)
   }
 
 }

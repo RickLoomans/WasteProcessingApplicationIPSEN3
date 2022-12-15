@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,7 +10,18 @@ export class AppComponent {
   title = 'WasteProcessingApplication';
   myVar = false;
 
+ // constructor(private http: HttpClient, pr) {
+
+ // }
+
+
   button() {
     this.myVar = !this.myVar;
   }
+
+  //onCreatePost() {
+   // this.verwerken
+  //}
+
+
 }
