@@ -27,11 +27,11 @@ export class VerwerkenInputComponent {
   onVerwerken() {
     this.data.emit({artikelnummer: this.artikelnummer, klantId: this.klantId, metrage: this.metrage, magazijnId: this.magazijnId})
     console.log(this.artikelnummer)
-    this.verwerkenService.verwerkReststof(this.artikelnummer, this.klantId, this.metrage, this.magazijnId)      
+    this.verwerkenService.verwerkReststof(this.artikelnummer, this.klantId, this.metrage, this.magazijnId)
     .subscribe(responseData => {
       console.log(responseData)
       console.log(responseData.response)
-    });;
+    });
   }
 
 }
