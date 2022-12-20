@@ -16,7 +16,10 @@ export class NavbarComponent {
   goRestStof(){
     this.router.navigate(['reststofverwerken']);
   }
-  
-  
+  goAfval() {
+    this.router.navigate(['afval']);
+  }
+
+
 
 }
