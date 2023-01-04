@@ -8,17 +8,14 @@ import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
   styleUrls: ['./resultaat-verwerken-stof.component.scss']
 })
 export class ResultaatVerwerkenStofComponent {
-  temp: ResultaatModel | undefined;
+  resultaatModel: ResultaatModel | undefined;
   header:string = '';
   desc:string = '';
-  test = new ReststofVerwerkenComponent();
 
   ngOnInit(): void {
-    this.temp = ResultaatModel.getInstance();
-    this.header = this.temp.apiOutput
-    this.desc = this.temp.description
-    console.log(this.header);
-
+    this.resultaatModel = ResultaatModel.getInstance();
+    this.header = this.resultaatModel.apiOutput
+    this.desc = this.resultaatModel.description
   }
 
 

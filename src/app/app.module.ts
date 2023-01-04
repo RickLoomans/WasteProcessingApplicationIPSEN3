@@ -3,6 +3,7 @@ import { HomeModule } from './modules/home/home.module';
 import { CoreModule } from './modules/core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,12 +12,15 @@ import { ResultaatVerwerkenStofComponent } from './reststof-verwerken/resultaat-
 import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/verwerken-input.component';
 import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
+import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReststofVerwerkenComponent,
     ResultaatVerwerkenStofComponent,
+    VerwerkenInputComponent,
+    ResultaatDetailsComponent
     VerwerkenInputComponent,
     AfvalComponent,
     AfvallijstComponent
@@ -27,7 +31,7 @@ import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
     CoreModule,
     HomeModule,
     ReststofModule,
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
