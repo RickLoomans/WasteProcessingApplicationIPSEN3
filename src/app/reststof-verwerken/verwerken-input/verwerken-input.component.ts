@@ -7,8 +7,6 @@ import { VerwerkenService } from '../verwerken-service';
   templateUrl: './verwerken-input.component.html',
   styleUrls: ['./verwerken-input.component.scss']
 })
-
-
 export class VerwerkenInputComponent {
   @Output() data = new EventEmitter<{artikelnummer: string, klantId: number, metrage: number, magazijnId: number}>();
   artikelnummer: string = '';

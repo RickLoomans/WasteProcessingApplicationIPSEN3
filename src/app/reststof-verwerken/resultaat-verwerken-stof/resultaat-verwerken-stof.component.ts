@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ResultaatModel} from "./resultaat-model";
 import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
 
@@ -7,7 +7,7 @@ import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
   templateUrl: './resultaat-verwerken-stof.component.html',
   styleUrls: ['./resultaat-verwerken-stof.component.scss']
 })
-export class ResultaatVerwerkenStofComponent {
+export class ResultaatVerwerkenStofComponent implements OnInit{
   resultaatModel: ResultaatModel | undefined;
   header:string = '';
   desc:string = '';

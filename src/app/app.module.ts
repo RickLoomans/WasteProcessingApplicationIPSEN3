@@ -20,7 +20,7 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     ReststofVerwerkenComponent,
     ResultaatVerwerkenStofComponent,
     VerwerkenInputComponent,
-    ResultaatDetailsComponent
+    ResultaatDetailsComponent,
     VerwerkenInputComponent,
     AfvalComponent,
     AfvallijstComponent

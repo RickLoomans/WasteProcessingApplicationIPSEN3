@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ResultaatModel} from "./resultaat-verwerken-stof/resultaat-model";
 import {VerwerkenInputComponent} from "./verwerken-input/verwerken-input.component";
 import {VerwerkenService} from "./verwerken-service";
@@ -8,12 +8,15 @@ import {VerwerkenService} from "./verwerken-service";
   templateUrl: './reststof-verwerken.component.html',
   styleUrls: ['./reststof-verwerken.component.scss']
 })
-export class ReststofVerwerkenComponent {
+export class ReststofVerwerkenComponent implements OnInit{
   hasProcessed:boolean = false;
   private apiOut: string | undefined;
   private resultaatModel: ResultaatModel | undefined;
 
   constructor(private verwerkenService: VerwerkenService ) { }
+
+  ngOnInit() {
+  }
 
   @ViewChild(VerwerkenInputComponent) input!: VerwerkenInputComponent;
   verwerken() {
