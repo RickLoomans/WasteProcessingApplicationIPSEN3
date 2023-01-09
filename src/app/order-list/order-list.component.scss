@@ -1,14 +1,24 @@
 .B{
   button{
-    align-items: center;
-    display: flex;
-    background-color: white;
+    align-items: start;
+    display: grid;
+    background-color: #4bc8b6;
     width: 40vw;
+    text-align: center;
+    color: white;
+    grid-template-columns:repeat(4, 1fr);
+    grid-column-gap: .5em;
+    border-radius: 10px;
+    border-color: lightgrey;
+
+  }
+  p{
+    font-size: 1.2vw;
+  }
+  h1{
+    font-size: 3vh;
+    padding-left: 1em;
   }
 
 
-
-}
-p{
-  padding-left: 20px;
 }
