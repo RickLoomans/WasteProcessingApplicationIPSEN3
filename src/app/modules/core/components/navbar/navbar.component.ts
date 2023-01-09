@@ -19,7 +19,11 @@ export class NavbarComponent {
   Logout(){
     this.router.navigate(['login']);
   }
-  
-  
+
+  goOrder(){
+    this.router.navigate(['orders'])
+  }
+
+
 
 }

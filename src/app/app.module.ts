@@ -3,13 +3,14 @@ import { HomeModule } from './modules/home/home.module';
 import { CoreModule } from './modules/core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
 import { ResultaatVerwerkenStofComponent } from './reststof-verwerken/resultaat-verwerken-stof/resultaat-verwerken-stof.component';
 import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/verwerken-input.component';
 import { LoginComponent } from './login/login.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     ReststofVerwerkenComponent,
     ResultaatVerwerkenStofComponent,
     VerwerkenInputComponent,
-    LoginComponent
+    LoginComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { LoginComponent } from './login/login.component';
     CoreModule,
     HomeModule,
     ReststofModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
