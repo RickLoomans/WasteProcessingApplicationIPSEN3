@@ -14,15 +14,16 @@ export class ReststofVerwerkenComponent {
   @Input()
   data!: { artikelnummer: string; metrage: number; klantId: number; magazijnId: number; };
   //@Output() data1: { artikelnummer: string; metrage: number; klantId: number; magazijnId: number; } | undefined;
-  hasProcessed:boolean = false;
+  hasProcessed: boolean = false;
   private apiOut: string | undefined;
   private resultaatModel: ResultaatModel | undefined;
 
-  constructor(private verwerkenService: VerwerkenService ) { }
-
+  constructor(private verwerkenService: VerwerkenService) {
+  }
 
 
   @ViewChild(VerwerkenInputComponent) input!: VerwerkenInputComponent;
+
   verwerken() {
     this.resultaatModel = ResultaatModel.getInstance();
     this.resultaatModel.metrage = this.input.metrage;

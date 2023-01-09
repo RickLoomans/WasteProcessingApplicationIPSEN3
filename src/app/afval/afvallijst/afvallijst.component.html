@@ -1,35 +1,26 @@
 <section class="afvallijst">
-  <h2>Afvalcategorie A1</h2>
-  <p class="infotext">Alle afvalstoffen in categorie A1</p>
+  <h2>Afvalcategorie {{name}}</h2>
+  <p class="infotext">Alle afvalstoffen in categorie {{name}}</p>
   <section class="center">
     <table class="lijst">
       <tr>
-        <th>Nummer</th>
+        <th>Ordernummer</th>
         <th>Metrage</th>
         <th>Gewicht</th>
         <th>Samenstelling</th>
         <th>Klant ID</th>
-        <th>Ordernummer</th>
+
       </tr>
 
 
-      <tr class="item">
-        <td>1</td>
-        <td>34 m</td>
-        <td>6 kg</td>
-        <td>100% PL</td>
-        <td>103832</td>
-        <td>SKDCFN-DNI3IA</td>
+      <tr *ngFor="let row of this.sizeArray" class="item">
+        <td>{{this.afvallijstData[row].ordernr}}</td>
+        <td>{{this.afvallijstData[row].metrage}} m</td>
+        <td>{{this.afvallijstData[row].gewicht}} kg</td>
+        <td>{{this.afvallijstData[row].samenstelling}}</td>
+        <td>{{this.afvallijstData[row].klantid}}</td>
       </tr>
 
-      <tr class="item">
-        <td>Afvalstof 1</td>
-        <td>34 m</td>
-        <td>6 kg</td>
-        <td>100% PL</td>
-        <td>103832</td>
-        <td>SKDCFN-DNI3IA</td>
-      </tr>
     </table>
     <!--<ul class="lijst">
       <li class="firstitem"><pre class="myPRE">Nummer&#9;metrage&#9;gewicht&#9;samenstelling&#9;klantid</pre></li>

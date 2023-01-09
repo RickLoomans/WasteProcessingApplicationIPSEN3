@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatTableModule} from "@angular/material/table";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/ve
 import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
 import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     ReststofModule,
     HttpClientModule,
     FormsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

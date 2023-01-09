@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ResultaatModel} from "../resultaat-verwerken-stof/resultaat-model";
 import { VerwerkenService } from '../verwerken-service';
 
@@ -7,7 +7,7 @@ import { VerwerkenService } from '../verwerken-service';
   templateUrl: './verwerken-input.component.html',
   styleUrls: ['./verwerken-input.component.scss']
 })
-export class VerwerkenInputComponent {
+export class VerwerkenInputComponent implements OnInit{
   @Output() data = new EventEmitter<{artikelnummer: string, klantId: number, metrage: number, magazijnId: number}>();
   artikelnummer: string = '';
   metrage: number = 0;
@@ -25,11 +25,7 @@ export class VerwerkenInputComponent {
   onVerwerken() {
     this.data.emit({artikelnummer: this.artikelnummer, klantId: this.klantId, metrage: this.metrage, magazijnId: this.magazijnId})
     console.log(this.artikelnummer)
-    this.verwerkenService.verwerkReststof(this.artikelnummer, this.klantId, this.metrage, this.magazijnId)
-    .subscribe(responseData => {
-      console.log(responseData)
-      console.log(responseData.response)
-    });
+    this.verwerkenService.verwerkReststof(this.artikelnummer, this.klantId, this.metrage, this.magazijnId);
   }
 
 }
