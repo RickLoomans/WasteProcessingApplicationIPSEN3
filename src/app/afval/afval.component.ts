@@ -36,12 +36,7 @@ export class AfvalComponent implements OnInit {
     this.afvalService.fetchAfvalData().subscribe(data  => {
       this.isFetching = false;
       this.info$.next(data);
-      //const keys: String[] = Object.keys(data)
-      //console.log(keys);
-      //console.log(data[0]);
-      //this.afvalData = data;
     });
-   //console.log(this.info$);
     this.getData()
 
   }
@@ -49,50 +44,23 @@ export class AfvalComponent implements OnInit {
   getData() {
     this.info$.subscribe(data => {
       this.afvalData = data;
-      console.log(data[1])
-
       this.size = this.afvalData.length;
       this.sizeArray = new Array(this.size);
       for (let i = 0; i < this.size; i++) {
         this.sizeArray[i] = i
       }
-      //console.log(this.sizeArray)
+
 
     })
-    //console.log(this.afvalData)
+
   }
 
   onZieLijst(categorie: string) {
-    console.log("click" + categorie);
+
     this.onLijst.emit(categorie)
     this.afvalAlgemeen = false;
     this.nameCategorie = categorie;
-    //this.router.navigate(['afvallijst']);
   }
 
-  onUpdate() {
-   // console.log(this.afvalData[1][2])
-    console.log(this.afvalData[0])
-  }
 
-  fetchAfvalData() {
-    return this.http.get<AfvalModel[]>('http://localhost:8080/afvalinzicht')
-      //.pipe(map(responseData => {
-       // const dataArray = [];
-       // for (const key in responseData) {
-        //  if (responseData.hasOwnProperty(key)) {
-
-            // @ts-ignore
-          //  dataArray.push({ ...responseData[key], id: key })
-          //}
-
-        //}
-      //}))
-      .subscribe(data => {
-      console.log(data[0])
-       //stofData = ((<AfvalModel[]><unknown>data));
-    })
-  ;
-
-  }
 }

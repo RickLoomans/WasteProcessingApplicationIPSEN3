@@ -12,7 +12,6 @@ export class AfvallijstService {
   constructor(private http: HttpClient) {}
 
   fetchLijst(naam: string) {
-    console.log("naam: " + naam)
     return this.http.get<AfvalInfoModel[]>('http://localhost:8080/afvallijst?naam='+ naam)
   }
 
