@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 import {Routes, RouterModule, Router} from '@angular/router';
 import { ReststofVerwerkenComponent } from 'src/app/modules/reststof/components/reststof-verwerken/reststof-verwerken.component';
+import {AfvalService} from "../../../../afval/afval.service";
+import {AfvalModel} from "../../../../afval/afval.model";
 
 @Component({
   selector: 'app-navbar',
@@ -9,14 +11,19 @@ import { ReststofVerwerkenComponent } from 'src/app/modules/reststof/components/
 })
 
 export class NavbarComponent {
-  constructor(private router: Router){}
+  @Output() afvalData: AfvalModel[] = []
+  constructor(private router: Router, private afvalService: AfvalService){}
   goHome(){
     this.router.navigate(['']);
   }
   goRestStof(){
     this.router.navigate(['reststofverwerken']);
   }
-  
-  
+  goAfval() {
+    this.router.navigate(['afval']);
+
+  }
+
+
 
 }
