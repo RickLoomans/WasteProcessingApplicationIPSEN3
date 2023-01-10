@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {MatTableModule} from "@angular/material/table";
+
 
 import { HttpClient  } from '@angular/common/http';
 
@@ -38,7 +38,7 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     ReststofModule,
     HttpClientModule,
     FormsModule,
-    MatTableModule,
+
 
    // HttpModule
   ],
