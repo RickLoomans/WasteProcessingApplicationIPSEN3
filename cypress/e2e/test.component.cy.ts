@@ -5,6 +5,17 @@ describe('AfvalComponent', () => {
     cy.visit('http://localhost:4200/afval')
   })
 
+  it('should find ANKA FR-12-280', () => {
+      cy.intercept({
+        method: 'GET',
+        url: 'http://localhost:8080/orderlijst',
+
+      }, ['ANKA FR-12-280', 45, 2, '100% PES', 9])
+      cy.visit('http://localhost:4200/orderlijst')
+      cy.get('td').should('contain', 'ANKA FR-12-280')
+    }
+  )
+
     it('should find A1', () => {
         cy.intercept({
           method: 'POST',

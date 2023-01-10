@@ -16,6 +16,10 @@ export class NavbarComponent {
   goHome(){
     this.router.navigate(['']);
   }
+
+  goLijst() {
+    this.router.navigate(['orderlijst']);
+  }
   goRestStof(){
     this.router.navigate(['reststofverwerken']);
   }
