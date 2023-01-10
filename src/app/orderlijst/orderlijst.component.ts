@@ -21,20 +21,18 @@ export class OrderlijstComponent implements OnInit{
 
   constructor(private orderlijstService: OrderlijstService, private verwerkenService: VerwerkenService) {
   }
+
   ngOnInit() {
     this.orderlijstService.fetchLijst().subscribe(data => {
       this.info$.next(data)
-      console.log(data);
     })
     this.getData()
 
   }
 
   onVerwerk(stof: OrderModel) {
-
     this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage, stof.magazijnid)
       .subscribe(responseData => {
-        console.log(responseData)
         console.log(responseData)
       });
   }
@@ -47,7 +45,6 @@ export class OrderlijstComponent implements OnInit{
       for (let i = 0; i < this.size; i++) {
         this.sizeArray[i] = i
       }
-
 
     })
 

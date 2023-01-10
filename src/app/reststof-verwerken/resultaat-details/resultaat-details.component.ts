@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ResultaatModel} from "../resultaat-verwerken-stof/resultaat-model";
 import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
 import {StofService} from "../stof-service";
 import {StofModel} from "../stof-model";
+import {OrderModel} from "../../orderlijst/order.model";
 
 @Component({
   selector: 'app-resultaat-details',
@@ -19,6 +20,15 @@ export class ResultaatDetailsComponent {
   kleur: string = '';
   soort: string = '';
   ordernummer: string = '';
+
+  @Input() public verwerkteStofDetails: OrderModel = {
+    gewicht: 0,
+    klantid: 0,
+    magazijnid: 0,
+    metrage: 0,
+    samenstelling: "",
+    artikelnr: ""
+  }
 
   constructor(private stofService: StofService) { }
 

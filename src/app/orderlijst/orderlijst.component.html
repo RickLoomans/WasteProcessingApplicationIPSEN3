@@ -1,7 +1,7 @@
 <section class="afvallijst">
-  <h2>Te verwerken stoffen</h2>
-  <p class="infotext">Lijst van alle stoffen die verwerkt moeten worden</p>
   <section class="center">
+    <h2>Te verwerken stoffen ({{orderlijst.length}})</h2>
+    <p class="infotext">Lijst van alle stoffen die verwerkt moeten worden</p>
     <table class="lijst">
       <tr>
         <th>Artikelnummer</th>
@@ -20,10 +20,14 @@
         <td>{{this.orderlijst[row].metrage}}</td>
         <td>{{this.orderlijst[row].samenstelling}}</td>
         <td>{{this.orderlijst[row].klantid}}</td>
-        <td><button>Verwerk</button></td>
+        <td><button (click)="onVerwerk(this.orderlijst[row])">Verwerk</button></td>
       </tr>
 
     </table>
+
+  </section>
+  <section class="result">
+    <app-resultaat-details></app-resultaat-details>
   </section>
   <img src="./assets/images/undraw_collecting_re_lp6p.svg">
 </section>
