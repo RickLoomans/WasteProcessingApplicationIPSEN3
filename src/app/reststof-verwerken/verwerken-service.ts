@@ -10,12 +10,12 @@ export class VerwerkenService {
 
   verwerkReststof(artikelnr: string, klantId: number,metrage: number, magazijnId:number) {
     const postData : VerwerkenModel = { artikelnr: artikelnr, klantId: klantId, metrage: metrage, magazijnId: magazijnId}
-    console.log(postData)
+
 
     this.http.post<{ response: string[] }>('http://localhost:8080/reststofverwerken', postData
     )
       .subscribe(responseData => {
-        console.log(responseData.response[0])
+
       });
   }
 

@@ -24,13 +24,11 @@ export class ResultaatDetailsComponent {
 
   ngOnInit(): void {
     this.resultaatModel = ResultaatModel.getInstance();
-    console.log(this.resultaatModel.artikelnr)
 
     this.metrage = this.resultaatModel.metrage;
     this.artikelnummer = this.resultaatModel.artikelnr;
 
     this.stofService.fetchStof(this.artikelnummer).subscribe(responseData => {
-      console.log(responseData);
       const stofData = ((<StofModel><unknown>responseData));
       this.gewicht = stofData.gewicht;
       this.artikelnummer = stofData.artikelnr;
@@ -40,6 +38,5 @@ export class ResultaatDetailsComponent {
       this.soort = stofData.soort;
       this.ordernummer = stofData.klantOrder.ordernr;
     });
-    //ToDo klant gegevens ophalen, moet het klantId van de input halen (wacht tot na maken forms) en moet de backend fixen, krijg momenteel OneToOne OneToMany error tijdens het opahlen
   }
 }

@@ -9,7 +9,6 @@ export class StofService {
 
   fetchStof(artikelnr: string) {
     artikelnr = 'AKEMI CS-4466-150';
-    //ToDo Toevoegen dat het artikelnr kan worden opgehaald uit de gegeven input
     return this.http.get<{ response: StofModel }>('http://localhost:8080/stof?artikelnr='+ artikelnr)
   }
 

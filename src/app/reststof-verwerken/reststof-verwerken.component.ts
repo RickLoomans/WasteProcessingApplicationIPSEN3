@@ -29,7 +29,6 @@ export class ReststofVerwerkenComponent {
     this.resultaatModel.metrage = this.input.metrage;
     //ToDo deze code vervangen voor de Api request, hier was Marielle mee bezig dus miss hier haar veranderingen accepteren.
 
-    // this.verwerkenService.verwerkReststof(this.input.artikelnummer, Number(this.input.klantId), Number(this.input.magazijnId), this.input.metrage)
     this.apiOut = Math.random() > 0.5 ? 'magazijn' : 'retour';
     this.apiOut = Math.random() > 0.24 ? this.apiOut : 'Afvalcategorie: A1';
     this.resultaatModel.processApiRespone(this.apiOut);
