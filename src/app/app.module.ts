@@ -40,7 +40,6 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     FormsModule,
 
 
-   // HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
