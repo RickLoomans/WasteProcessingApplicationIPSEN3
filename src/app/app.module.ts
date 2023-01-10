@@ -17,6 +17,7 @@ import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/ve
 import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
 import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
+import { OrderlijstComponent } from './orderlijst/orderlijst.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     ResultaatDetailsComponent,
     VerwerkenInputComponent,
     AfvalComponent,
-    AfvallijstComponent
+    AfvallijstComponent,
+    OrderlijstComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,6 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     ReststofModule,
     HttpClientModule,
     FormsModule,
-
 
   ],
   providers: [],
