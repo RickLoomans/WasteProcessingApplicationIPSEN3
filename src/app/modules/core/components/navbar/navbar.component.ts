@@ -20,12 +20,6 @@ export class NavbarComponent {
     this.router.navigate(['reststofverwerken']);
   }
   goAfval() {
-    //this.afvalService.fetchAfvalData().subscribe(data  => {
-      //const keys: String[] = Object.keys(data)
-      //console.log(keys);
-     // console.log(data[0]);
-     // this.afvalData = data;
-   // });
     this.router.navigate(['afval']);
 
   }
