@@ -20,7 +20,7 @@ describe('AfvalComponent', () => {
         method: 'GET',
         url: 'http://localhost:4200/afval',
       }, ['A1', 736, 247, '100% PES of 100%PL'])
-    cy.visit('http://localhost:4200/afval')
+    cy.visit('/afval')
       cy.get('p').should('have.id', 'afvaltabel')
     }
   )
