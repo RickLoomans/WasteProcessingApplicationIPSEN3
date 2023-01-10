@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WasteProcessingApplication';
-  myVar = false;
+  myBool = false;
 
   button() {
-    this.myVar = !this.myVar;
+    this.myBool = !this.myBool;
   }
 }
