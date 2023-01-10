@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatTableModule} from "@angular/material/table";
 
+import { HttpClient  } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
@@ -37,6 +39,8 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
     HttpClientModule,
     FormsModule,
     MatTableModule,
+
+   // HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
