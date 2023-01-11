@@ -1,13 +1,13 @@
 <section class="row">
   <h1>Reststof Verwerken</h1>
   <label>Artikelnummer</label>
-  <input type="text" class="input" [(ngModel)]="artikelnummer">
+  <input type="text" class="input"{{artikelnummer}>
   <label>Klant ID</label>
-  <input type="text" class="input" [(ngModel)]="klantId">
+  <input type="text" class="input" {{klantid}}>
   <label>Metrage</label>
-  <input type="text" class="input" [(ngModel)]="metrage">
+  <input type="text" class="input" {{metrage}}>
   <label>Magazijn ID</label>
-  <input type="text" class="input" [(ngModel)]="magazijnId">
+  <input type="text" class="input" {{magazijnId } }>
 </section>
 <button (click)="onVerwerken()" class="btn">Verwerk</button>
 

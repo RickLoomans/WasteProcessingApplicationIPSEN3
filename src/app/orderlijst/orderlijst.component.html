@@ -1,0 +1,29 @@
+<section class="afvallijst">
+  <h2>Te verwerken stoffen</h2>
+  <p class="infotext">Lijst van alle stoffen die verwerkt moeten worden</p>
+  <section class="center">
+    <table class="lijst">
+      <tr>
+        <th>Artikelnummer</th>
+        <th>Gewicht</th>
+        <th>Metrage</th>
+        <th>Samenstelling</th>
+        <th>Klant ID</th>
+        <th>Knop</th>
+
+      </tr>
+
+
+      <tr *ngFor="let row of this.sizeArray" class="item">
+        <td>{{this.orderlijst[row].artikelnr}}</td>
+        <td>{{this.orderlijst[row].gewicht}}</td>
+        <td>{{this.orderlijst[row].metrage}}</td>
+        <td>{{this.orderlijst[row].samenstelling}}</td>
+        <td>{{this.orderlijst[row].klantid}}</td>
+        <td><button>Verwerk</button></td>
+      </tr>
+
+    </table>
+  </section>
+  <img src="./assets/images/undraw_collecting_re_lp6p.svg">
+</section>

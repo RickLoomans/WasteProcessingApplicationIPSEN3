@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
 import {AfvalComponent} from "./afval/afval.component";
 import {AfvallijstComponent} from "./afval/afvallijst/afvallijst.component";
+import {OrderlijstComponent} from "./orderlijst/orderlijst.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -12,7 +13,8 @@ const routes: Routes = [
     {path: "home", component: HomeComponent},
     {path: "reststofverwerken", component: ReststofVerwerkenComponent},
       {path: "afval", component: AfvalComponent},
-      {path: "afvallijst", component: AfvallijstComponent}
+      {path: "afvallijst", component: AfvallijstComponent},
+      {path: "orderlijst", component: OrderlijstComponent}
   ]}
 ];
 
