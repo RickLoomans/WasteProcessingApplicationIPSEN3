@@ -10,8 +10,6 @@ import {NavbarComponent} from "../modules/core/components/navbar/navbar.componen
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  // @ts-ignore
-
   constructor(private router: Router, private http: HttpClient, private navbar: NavbarComponent){}
   jwt: string = '';
 
@@ -27,7 +25,7 @@ export class LoginComponent {
     const headers = { 'Content-Type': 'application/json' };
     let url =  "http://localhost:8080/api/auth/signin"
     // @ts-ignore
-    this.http.post<Login>(url,
+    this.http.post<Poep>(url,
       {
         "username": username,
         "password": password
@@ -39,12 +37,7 @@ export class LoginComponent {
       sessionStorage.setItem('JWT',responseData.message);
       this.navbar.goHome();
 
-
-       // this.jwt = responseData.message;
-
     })
-    //   this.router.navigate(['']);
-    // }
     console.log(username)
     console.log("done"
 )

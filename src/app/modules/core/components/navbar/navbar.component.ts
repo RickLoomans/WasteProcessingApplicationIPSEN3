@@ -20,7 +20,7 @@ export class NavbarComponent {
       console.log(response)
       // @ts-ignore
       if(response == 'User Content.'){
-        this.router.navigate(['']);
+        this.router.navigate(['home']);
       }
     })
 
