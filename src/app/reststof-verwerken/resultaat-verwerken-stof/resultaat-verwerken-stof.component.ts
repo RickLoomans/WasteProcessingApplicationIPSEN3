@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ResultaatModel} from "./resultaat-model";
 import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
 
@@ -8,14 +8,15 @@ import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
   styleUrls: ['./resultaat-verwerken-stof.component.scss']
 })
 export class ResultaatVerwerkenStofComponent implements OnInit{
-  resultaatModel: ResultaatModel | undefined;
   header:string = '';
+  orderNummer:string = '';
   desc:string = '';
 
+  @Input() apiOutVerwerken: string[] = [];
+
   ngOnInit(): void {
-    this.resultaatModel = ResultaatModel.getInstance();
-    this.header = this.resultaatModel.apiOutput
-    this.desc = this.resultaatModel.description
+    this.header = this.apiOutVerwerken[0]
+    this.orderNummer = this.apiOutVerwerken[1]
   }
 
 

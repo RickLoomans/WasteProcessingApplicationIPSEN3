@@ -3,12 +3,12 @@ import {HttpClient} from "@angular/common/http";
 import {StofModel} from "./stof-model";
 
 @Injectable({providedIn: 'root'})
-export class StofService {
+export class KlantService {
 
   constructor(private http: HttpClient) { }
 
-  fetchStof(artikelnr: string) {
-    return this.http.get<{ response: StofModel }>('http://localhost:8080/stof?artikelnr='+ artikelnr)
+  fetchKlant(klantId: number) {
+    return this.http.get<{ response: StofModel }>('http://localhost:8080/klant?id='+ klantId)
   }
 
 }

@@ -6,6 +6,4 @@ export interface OrderModel {
   samenstelling: string;
   gewicht: number;
 
-
-
 }
