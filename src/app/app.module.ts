@@ -11,6 +11,7 @@ import { ResultaatVerwerkenStofComponent } from './reststof-verwerken/resultaat-
 import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/verwerken-input.component';
 import { LoginComponent } from './login/login.component';
 import { OrderListComponent } from './order-list/order-list.component';
+import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { OrderListComponent } from './order-list/order-list.component';
     ReststofModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [NavbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

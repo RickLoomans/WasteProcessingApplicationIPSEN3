@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {NavbarComponent} from "../modules/core/components/navbar/navbar.component";
+
 
 @Component({
   selector: 'app-login',
@@ -8,7 +11,13 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 })
 export class LoginComponent {
   // @ts-ignore
-  private http: HttpClient = new HttpClient;
+
+  constructor(private router: Router, private http: HttpClient, private navbar: NavbarComponent){}
+  jwt: string = '';
+
+
+
+
   login() {
     // @ts-ignore
     var username = document.getElementById('username').value;
@@ -17,14 +26,30 @@ export class LoginComponent {
 
     const headers = { 'Content-Type': 'application/json' };
     let url =  "http://localhost:8080/api/auth/signin"
-    this.http.post(url,
+    // @ts-ignore
+    this.http.post<Login>(url,
       {
-        "username" : username,
-        "password" : password
+        "username": username,
+        "password": password
       },
       {headers}
-    )
-    console.log("done")
+     ).subscribe(responseData => {
+       console.log(responseData);
+
+      sessionStorage.setItem('JWT',responseData.message);
+      this.navbar.goHome();
+
+
+       // this.jwt = responseData.message;
+
+    })
+    //   this.router.navigate(['']);
+    // }
+    console.log(username)
+    console.log("done"
+)
   }
 
 }
+
+
