@@ -1,4 +1,4 @@
-import {Component, Input, SimpleChange, SimpleChanges} from '@angular/core';
+import {Component} from '@angular/core';
 import {ResultaatModel} from "../resultaat-verwerken-stof/resultaat-model";
 import {StofService} from "../stof-service";
 import {StofModel} from "../stof-model";
@@ -54,7 +54,6 @@ export class ResultaatDetailsComponent {
     }
 
     this.stofService.fetchStof(verwerkteStofDetails.artikelnr).subscribe(responseData => {
-      console.log(responseData)
       const stofData = ((<StofModel><unknown>responseData));
       this.verwerkteStof = verwerkteStofDetails
       this.leverancier = stofData.leverancier;

@@ -1,5 +1,3 @@
-
-
 export interface AfvalModel {
   naam: string;
   gewicht: number;

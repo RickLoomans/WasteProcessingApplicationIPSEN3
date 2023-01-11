@@ -1,10 +1,5 @@
 import {AfvalComponent} from "./afval.component";
-import {AfvallijstComponent} from "./afvallijst/afvallijst.component";
 import { mount } from 'cypress/angular'
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { TestBed, inject } from '@angular/core/testing';
-import {AfvalService} from "./afval.service";
-import {of} from "rxjs";
 
 declare global {
   namespace Cypress {

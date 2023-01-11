@@ -1,12 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {Observable, ReplaySubject} from "rxjs";
-import {StofModel} from "../reststof-verwerken/stof-model";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ReplaySubject} from "rxjs";
 import {OrderlijstService} from "./orderlijst.service";
 import {OrderModel} from "./order.model";
-import {VerwerkenModel} from "../reststof-verwerken/verwerken-model";
 import {VerwerkenService} from "../reststof-verwerken/verwerken-service";
 import {ResultaatDetailsComponent} from "../reststof-verwerken/resultaat-details/resultaat-details.component";
-import {VerwerkenInputComponent} from "../reststof-verwerken/verwerken-input/verwerken-input.component";
 
 @Component({
   selector: 'app-orderlijst',
