@@ -2,45 +2,21 @@ import { Component } from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {NavbarComponent} from "../modules/core/components/navbar/navbar.component";
+import {LoginService} from "./Login.service";
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [LoginService]
 })
 export class LoginComponent {
-  constructor(private router: Router, private http: HttpClient, private navbar: NavbarComponent){}
-  jwt: string = '';
+  constructor(private Login: LoginService) {
+  }
 
-
-
-
-  login() {
-    // @ts-ignore
-    var username = document.getElementById('username').value;
-    // @ts-ignore
-    var password = document.getElementById('password').value;
-
-    const headers = { 'Content-Type': 'application/json' };
-    let url =  "http://localhost:8080/api/auth/signin"
-    // @ts-ignore
-    this.http.post<Poep>(url,
-      {
-        "username": username,
-        "password": password
-      },
-      {headers}
-     ).subscribe(responseData => {
-       console.log(responseData);
-
-      sessionStorage.setItem('JWT',responseData.message);
-      this.navbar.goHome();
-
-    })
-    console.log(username)
-    console.log("done"
-)
+  public idk() {
+    this.Login.login()
   }
 
 }

@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 // import { OrderListComponent } from './order-list/order-list.component';
 import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
+import {LoginService} from "./login/Login.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {NavbarComponent} from "./modules/core/components/navbar/navbar.component
     ReststofModule,
     HttpClientModule,
   ],
-  providers: [NavbarComponent],
+  providers: [NavbarComponent,
+  LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
