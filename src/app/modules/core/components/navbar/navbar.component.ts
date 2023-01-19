@@ -17,7 +17,6 @@ export class NavbarComponent {
     let url =  "http://localhost:8080/api/test/user"
     // @ts-ignore
     this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
-      console.log(response)
       // @ts-ignore
       if(response == 'User Content.'){
         this.router.navigate(['home']);
@@ -31,7 +30,6 @@ export class NavbarComponent {
     let url =  "http://localhost:8080/api/test/user"
     // @ts-ignore
     this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
-      console.log(response)
       // @ts-ignore
       if(response == 'User Content.'){
         this.router.navigate(['reststofverwerken']);
@@ -50,7 +48,6 @@ export class NavbarComponent {
     let url =  "http://localhost:8080/api/test/admin"
     // @ts-ignore
     this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
-      console.log(response)
       // @ts-ignore
       if(response == 'Admin Board.'){
         this.router.navigate(['orders']);

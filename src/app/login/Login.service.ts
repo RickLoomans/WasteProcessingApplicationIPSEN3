@@ -29,19 +29,12 @@ export class LoginService {
       },
       {headers}
     ).subscribe((responseData) => {
-      console.log(responseData);
 
 
       sessionStorage.setItem('JWT',responseData.message);
       this.navbar.goHome();
 
-    },(error) =>{
-      console.log(error)
-
-
     })
-    console.log(username)
-    console.log("done")
   }
 
 }
