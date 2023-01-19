@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "", component: LayoutComponent, children: [
     {path: "home", component: HomeComponent},
-    // {path: "reststofverwerken", component: ReststofVerwerkenComponent},
+    //{path: "reststofverwerken", component: ReststofVerwerkenComponent},
     {path: "login", component: LoginComponent},
       // {path: "orders", component: OrderListComponent}
   ]}
