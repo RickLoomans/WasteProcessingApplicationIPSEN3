@@ -10,18 +10,8 @@ export class AppComponent {
   title = 'WasteProcessingApplication';
   myVar = false;
 
- // constructor(private http: HttpClient, pr) {
-
- // }
-
-
   button() {
     this.myVar = !this.myVar;
   }
-
-  //onCreatePost() {
-   // this.verwerken
-  //}
-
 
 }

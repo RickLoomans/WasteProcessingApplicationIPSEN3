@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ResultaatModel} from "../resultaat-verwerken-stof/resultaat-model";
-import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
 import {StofService} from "../stof-service";
 import {StofModel} from "../stof-model";
+import {OrderModel} from "../../orderlijst/order.model";
+import {KlantService} from "../klant-service";
+import {KlantModel} from "../klant-model";
 
 @Component({
   selector: 'app-resultaat-details',
@@ -11,32 +13,57 @@ import {StofModel} from "../stof-model";
 })
 export class ResultaatDetailsComponent {
   resultaatModel: ResultaatModel | undefined;
-  metrage: number = 3;
-  gewicht: string = '';
-  artikelnummer: string = '';
   leverancier: string = '';
   productgroep: string = '';
   kleur: string = '';
   soort: string = '';
   ordernummer: string = '';
 
-  constructor(private stofService: StofService) { }
+  hasProcessed: boolean = false;
+
+  klantData: KlantModel = {
+    achternaam: "",
+    huisnummer: "",
+    klantid: 0,
+    land: "",
+    max_restant_retour: 0,
+    min_restant_retour: 0,
+    postcode: "",
+    straatnaam: "",
+    tussenvoegsel: "",
+    voornaam: ""
+  };
+
+  verwerkteStof: OrderModel = {
+    klantid: 0,
+    magazijnid: 0,
+    gewicht: 0,
+    metrage: 0,
+    samenstelling: "",
+    artikelnr: ""
+  }
+
+  constructor(private stofService: StofService, private klantService: KlantService) { }
 
   ngOnInit(): void {
-    this.resultaatModel = ResultaatModel.getInstance();
+  }
 
-    this.metrage = this.resultaatModel.metrage;
-    this.artikelnummer = this.resultaatModel.artikelnr;
+  public getDetails(verwerkteStofDetails: OrderModel) {
+    if (!this.hasProcessed) {
+      this.hasProcessed = true;
+    }
 
-    this.stofService.fetchStof(this.artikelnummer).subscribe(responseData => {
+    this.stofService.fetchStof(verwerkteStofDetails.artikelnr).subscribe(responseData => {
       const stofData = ((<StofModel><unknown>responseData));
-      this.gewicht = stofData.gewicht;
-      this.artikelnummer = stofData.artikelnr;
+      this.verwerkteStof = verwerkteStofDetails
       this.leverancier = stofData.leverancier;
       this.productgroep = stofData.productgroep;
       this.kleur = stofData.kleur;
       this.soort = stofData.soort;
-      this.ordernummer = stofData.klantOrder.ordernr;
     });
+
+    this.klantService.fetchKlant(verwerkteStofDetails.klantid).subscribe(responseData => {
+      this.klantData = ((<KlantModel><unknown>responseData))
+    })
   }
 }

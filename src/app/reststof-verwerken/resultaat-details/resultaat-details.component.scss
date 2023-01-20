@@ -1,3 +1,17 @@
-body {
-  background-color: #E6F3F8;
+.box {
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.labelBtn {
+  margin: 8px;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 9px;
+  border: white;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

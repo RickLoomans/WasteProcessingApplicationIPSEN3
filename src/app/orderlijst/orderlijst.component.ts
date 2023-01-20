@@ -1,43 +1,52 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ReplaySubject} from "rxjs";
-import {StofModel} from "../reststof-verwerken/stof-model";
 import {OrderlijstService} from "./orderlijst.service";
 import {OrderModel} from "./order.model";
-import {VerwerkenModel} from "../reststof-verwerken/verwerken-model";
 import {VerwerkenService} from "../reststof-verwerken/verwerken-service";
+import {ResultaatDetailsComponent} from "../reststof-verwerken/resultaat-details/resultaat-details.component";
 
 @Component({
   selector: 'app-orderlijst',
   templateUrl: './orderlijst.component.html',
-  styleUrls: ['./orderlijst.component.scss']
+  styleUrls: ['./orderlijst.component.scss'],
 })
 
 export class OrderlijstComponent implements OnInit{
   info$: ReplaySubject<OrderModel[]> = new ReplaySubject<OrderModel[]>(8)
   orderlijst: OrderModel[] = [];
+  verwerkteStof: OrderModel = {gewicht: 0, klantid: 0, magazijnid: 0, metrage: 0, samenstelling: "", artikelnr: ""}
   size: number = 0
   sizeArray: any = [];
+  responeData: string[] = [];
+  hasProcessed: boolean = false;
+
+  @ViewChild(ResultaatDetailsComponent, {static : true}) child : ResultaatDetailsComponent | undefined;
 
 
   constructor(private orderlijstService: OrderlijstService, private verwerkenService: VerwerkenService) {
   }
+
   ngOnInit() {
     this.orderlijstService.fetchLijst().subscribe(data => {
       this.info$.next(data)
-      console.log(data);
     })
     this.getData()
 
   }
 
   onVerwerk(stof: OrderModel) {
-
     this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage, stof.magazijnid)
       .subscribe(responseData => {
-        console.log(responseData)
-        console.log(responseData)
+        this.responeData = responseData;
       });
+
+    this.child?.getDetails(stof)
+
+    if (!this.hasProcessed) {
+      this.hasProcessed = true;
+    }
   }
+
   getData() {
     this.info$.subscribe(data => {
       this.orderlijst = data;
@@ -48,11 +57,8 @@ export class OrderlijstComponent implements OnInit{
         this.sizeArray[i] = i
       }
 
-
     })
 
   }
-
-
 
 }
