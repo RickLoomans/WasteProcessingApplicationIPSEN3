@@ -35,7 +35,7 @@ export class OrderlijstComponent implements OnInit{
   }
 
   onVerwerk(stof: OrderModel) {
-    this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage, stof.magazijnid)
+    this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage)
       .subscribe(responseData => {
         this.responeData = responseData;
       });

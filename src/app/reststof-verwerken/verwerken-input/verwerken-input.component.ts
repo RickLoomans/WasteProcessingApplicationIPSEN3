@@ -8,7 +8,7 @@ import { VerwerkenService } from '../verwerken-service';
   styleUrls: ['./verwerken-input.component.scss']
 })
 export class VerwerkenInputComponent implements OnInit{
-  @Output() data = new EventEmitter<{artikelnummer: string, klantId: number, metrage: number, magazijnId: number}>();
+  @Output() data = new EventEmitter<{artikelnummer: string, klantId: number, metrage: number}>();
   artikelnummer: string = '';
   metrage: number = 0;
   klantId: number = 0;
@@ -23,9 +23,9 @@ export class VerwerkenInputComponent implements OnInit{
   }
 
   onVerwerken() {
-    this.data.emit({artikelnummer: this.artikelnummer, klantId: this.klantId, metrage: this.metrage, magazijnId: this.magazijnId})
+    this.data.emit({artikelnummer: this.artikelnummer, klantId: this.klantId, metrage: this.metrage})
     console.log(this.artikelnummer)
-    this.verwerkenService.verwerkReststof(this.artikelnummer, this.klantId, this.metrage, this.magazijnId);
+    this.verwerkenService.verwerkReststof(this.artikelnummer, this.klantId, this.metrage);
   }
 
 }
