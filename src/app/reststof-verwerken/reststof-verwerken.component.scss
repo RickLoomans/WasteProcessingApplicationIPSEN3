@@ -13,7 +13,9 @@
   border-style: solid;
   border-radius: 10px;
   border-color: lightgray;
+  margin-bottom: 50px;
 }
+
 h1 {
   font-weight: 400;
   font-size: 250%;
@@ -31,32 +33,30 @@ input {
   border: solid 2px gray;
   border-radius: 4px;
   border-color: lightgray;
-  
   height:35px;
   padding: 5px;
   margin: 5px;
 }
 
 footer {
-
   float: right;
-  }
+}
 
 img {
   height: 300px;
   width: auto;
-  float: right;
-  position:relative;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   z-index: 2;
   bottom: 220px;
-
 }
+
 .column {
   float: left;
   width: 33.33%;
   padding: 15px;
 }
-
 
 .row {
   display: flex;
@@ -74,6 +74,4 @@ img {
   border: solid 1px;
   border-radius: 10px;
   margin-left: 80px;
-  
-  
 }

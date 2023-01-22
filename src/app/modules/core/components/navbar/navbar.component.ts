@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+
+import {Component, Output} from '@angular/core';
 import {Routes, RouterModule, Router} from '@angular/router';
 import { ReststofVerwerkenComponent } from 'src/app/modules/reststof/components/reststof-verwerken/reststof-verwerken.component';
+import {AfvalService} from "../../../../afval/afval.service";
+import {AfvalModel} from "../../../../afval/afval.model";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +15,8 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 })
 
 export class NavbarComponent {
-  constructor(private router: Router, private http: HttpClient){}
+
+  constructor(private router: Router, private http: HttpClient, private afvalService: AfvalService){}
   goHome(){
     const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
     let url =  "http://localhost:8080/api/test/user"
@@ -43,17 +48,19 @@ export class NavbarComponent {
     sessionStorage.removeItem('JWT');
   }
 
-  goOrder(){
+  goLijst(){
     const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
     let url =  "http://localhost:8080/api/test/admin"
     // @ts-ignore
     this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
       // @ts-ignore
       if(response == 'Admin Board.'){
-        this.router.navigate(['orders']);
+        this.router.navigate(['orderlijst']);
       }
     })
 
+  @Output() afvalData: AfvalModel[] = []
+  goAfval() {this.router.navigate(['afval']);
 
 
   }
