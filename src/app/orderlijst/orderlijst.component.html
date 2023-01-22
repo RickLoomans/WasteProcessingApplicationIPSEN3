@@ -2,7 +2,7 @@
   <section class="center">
     <h2>Te verwerken stoffen ({{orderlijst.length}})</h2>
     <p class="infotext">Lijst van alle stoffen die verwerkt moeten worden</p>
-    <table class="lijst">
+    <table id="table" class="lijst">
       <tr>
         <th>Artikelnummer</th>
         <th>Gewicht</th>
@@ -27,8 +27,8 @@
 
   </section>
   <section class="result">
-    <app-resultaat-verwerken-stof [hidden]="!hasProcessed" [apiOutVerwerken]="responeData"></app-resultaat-verwerken-stof>
-    <app-resultaat-details></app-resultaat-details>
+    <app-resultaat-verwerken-stof [hidden]="!hasProcessed" [resultOfProcessing]="responeData"></app-resultaat-verwerken-stof>
+    <app-resultaat-details [resultOfProcessing]="responeData"></app-resultaat-details>
   </section>
   <img src="./assets/images/undraw_collecting_re_lp6p.svg">
 </section>

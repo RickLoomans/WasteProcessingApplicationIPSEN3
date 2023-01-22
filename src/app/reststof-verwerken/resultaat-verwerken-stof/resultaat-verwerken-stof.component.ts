@@ -12,11 +12,11 @@ export class ResultaatVerwerkenStofComponent implements OnInit{
   orderNummer:string = '';
   desc:string = '';
 
-  @Input() apiOutVerwerken: string[] = [];
+  @Input() resultOfProcessing: string[] = [];
 
   ngOnInit(): void {
-    this.header = this.apiOutVerwerken[0]
-    this.orderNummer = this.apiOutVerwerken[1]
+    this.header = this.resultOfProcessing[0]
+    this.orderNummer = this.resultOfProcessing[1]
   }
 
 
