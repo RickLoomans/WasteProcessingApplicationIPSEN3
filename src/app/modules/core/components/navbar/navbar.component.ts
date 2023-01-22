@@ -15,7 +15,7 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 })
 
 export class NavbarComponent {
-
+  @Output() afvalData: AfvalModel[] = []
   constructor(private router: Router, private http: HttpClient, private afvalService: AfvalService){}
   goHome(){
     const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
@@ -58,12 +58,11 @@ export class NavbarComponent {
         this.router.navigate(['orderlijst']);
       }
     })
-
-  @Output() afvalData: AfvalModel[] = []
-  goAfval() {this.router.navigate(['afval']);
-
-
   }
+  goAfval(){this.router.navigate(['afval']);}
+
+
+
 
 
 
