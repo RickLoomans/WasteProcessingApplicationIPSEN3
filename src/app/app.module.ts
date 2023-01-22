@@ -18,6 +18,10 @@ import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
 import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
 import { OrderlijstComponent } from './orderlijst/orderlijst.component';
+import { RegistrerenComponent } from './admin/registreren/registreren.component';
+import { AdminComponent } from './admin/admin.component';
+import {RegistrerenService} from "./admin/registreren/registreren.service";
+import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { OrderlijstComponent } from './orderlijst/orderlijst.component';
     VerwerkenInputComponent,
     AfvalComponent,
     AfvallijstComponent,
-    OrderlijstComponent
+    OrderlijstComponent,
+    RegistrerenComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,7 @@ import { OrderlijstComponent } from './orderlijst/orderlijst.component';
     FormsModule,
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [RegistrerenService],
+  bootstrap: [AppComponent, NavbarComponent]
 })
 export class AppModule { }

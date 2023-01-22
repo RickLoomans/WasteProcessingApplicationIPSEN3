@@ -28,6 +28,10 @@ export class NavbarComponent {
 
   }
 
+  goAdmin(){
+    this.router.navigate(['admin'])
+  }
+
 
 
 }

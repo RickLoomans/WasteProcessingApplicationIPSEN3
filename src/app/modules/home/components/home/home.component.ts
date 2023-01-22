@@ -14,7 +14,11 @@ export class HomeComponent {
   goRestStof(){
     this.router.navigate(['reststofverwerken']);
   }
-  
+
+  goAdmin(){
+    this.router.navigate(['admin']);
+  }
+
 
   // TODO: greeting verander op basis van tijd en echte naam ophalen.
   public greeting = "Goedemiddag"

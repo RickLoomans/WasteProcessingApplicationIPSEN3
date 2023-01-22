@@ -1,0 +1,29 @@
+<body>
+<section class="registreren">
+  <H1>Werknemer Registreren</H1><br>
+  <!--<p class="errMSG">{{ error }}</p>-->
+
+  <label for="username"></label>
+  <section class="textInput">
+    <input type="text" id="username" name="username" placeholder="username"><br>
+    <label for="email"></label>
+    <input type="text" id="email" name="email" placeholder="email"><br>
+  </section>
+  <section class="radio" *ngFor="let role of roles">
+    <input
+      type="radio"
+      name="roles"
+      value="{{role}}"
+      (change)="radChange($event)"
+    >
+      <i>{{role}}</i>
+
+  </section>
+  <img src="assets/images/register.svg" alt="Illustratie Order" class="illustration">
+
+
+  <button name="registreren" (click)="registrerenGebruiker()">
+    Registreren
+  </button>
+</section>
+</body>

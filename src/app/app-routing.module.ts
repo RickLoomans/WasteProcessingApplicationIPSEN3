@@ -6,6 +6,8 @@ import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwer
 import {AfvalComponent} from "./afval/afval.component";
 import {AfvallijstComponent} from "./afval/afvallijst/afvallijst.component";
 import {OrderlijstComponent} from "./orderlijst/orderlijst.component";
+import {AdminComponent} from "./admin/admin.component";
+import {RegistrerenComponent} from "./admin/registreren/registreren.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -14,7 +16,9 @@ const routes: Routes = [
     {path: "reststofverwerken", component: ReststofVerwerkenComponent},
       {path: "afval", component: AfvalComponent},
       {path: "afvallijst", component: AfvallijstComponent},
-      {path: "orderlijst", component: OrderlijstComponent}
+      {path: "orderlijst", component: OrderlijstComponent},
+      {path: "admin", component: AdminComponent},
+      {path: "registreren", component: RegistrerenComponent}
   ]}
 ];
 
