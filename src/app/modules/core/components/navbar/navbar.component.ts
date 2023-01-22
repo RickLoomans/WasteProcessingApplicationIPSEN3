@@ -53,7 +53,7 @@ export class NavbarComponent {
         this.router.navigate(['orders']);
       }
     })
-    //hoi
+
 
 
   }

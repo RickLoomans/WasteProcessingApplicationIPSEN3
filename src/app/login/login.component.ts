@@ -15,7 +15,7 @@ export class LoginComponent {
   constructor(private Login: LoginService) {
   }
 
-  public idk() {
+  public logserv() {
     this.Login.login()
     this.error = "Wachtwoord/gebruikersnaam onjuist";
   }
