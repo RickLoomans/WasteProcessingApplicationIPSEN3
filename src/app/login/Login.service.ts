@@ -1,9 +1,8 @@
 import { Router } from "@angular/router";
 import {NavbarComponent} from "../modules/core/components/navbar/navbar.component";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import {catchError, of} from "rxjs";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+
 
 @Injectable()
 export class LoginService {
