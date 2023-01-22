@@ -13,7 +13,6 @@ import { LoginComponent } from './login/login.component';
 // import { OrderListComponent } from './order-list/order-list.component';
 import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
 import {LoginService} from "./login/Login.service";
-import { RegisterComponent } from './register/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { RegisterComponent } from './register/register/register.component';
     // ReststofVerwerkenComponent,
     // ResultaatVerwerkenStofComponent,
     // VerwerkenInputComponent,
-    LoginComponent,
-    RegisterComponent,
+    LoginComponent
     // OrderListComponent
   ],
   imports: [
