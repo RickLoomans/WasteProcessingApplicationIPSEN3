@@ -6,29 +6,37 @@ body{
 .lijst{
   width: 80%;
 
-  margin-left: 20%;
+  margin-left: 10%;
 }
 H1{
-  //font-size: 50px;
+  font-size: 20px;
+  color: #ecf0f9;
 }
 button{
-  font-size: 200%;
+  display: block;
+  color: #ecf0f9;
+  font-size: 100%;
   background-color: #222f3f;
-  width: 50%;
+  width: 90%;
   height: 10%;
   margin-top: 15px;
   outline: none;
-  border: solid 1px white;
+  border: solid 2px lightgrey;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: left;
   font-weight: 600;
+  i{
+    margin-right: 10px;
+    color: #4ac6b5;
+  }
 }
 
 img{
-  position: fixed;
-  bottom: 0;
-  right: 25px;
-  width: 250px;
+  position: relative;
+  top: 10%;
+  right: 20px;
+  width: 300px;
   z-index: 0;
+  height: 40%;
 }
