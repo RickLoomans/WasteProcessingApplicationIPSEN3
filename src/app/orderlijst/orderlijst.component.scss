@@ -31,7 +31,6 @@
     text-align: right;
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
-    //border-collapse: collapse;
     width: 90%;
     margin-top: 50px;
     border-radius: 5px;
@@ -113,7 +112,7 @@ button {
   border: solid 1px #002147;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   img{
     visibility: hidden;
   }

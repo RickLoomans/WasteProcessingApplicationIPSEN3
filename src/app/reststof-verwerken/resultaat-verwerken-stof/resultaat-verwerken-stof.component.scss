@@ -1,4 +1,11 @@
 .box {
-  margin-top: 25px;
+  margin-top: 27px;
   margin-bottom: 30px;
+}
+
+@media (max-height: 840px) {
+  .box {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
 }
