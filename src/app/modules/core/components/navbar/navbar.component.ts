@@ -44,8 +44,10 @@ export class NavbarComponent {
 
   }
   Logout(){
-    this.router.navigate(['login']);
     sessionStorage.removeItem('JWT');
+    sessionStorage.removeItem('key');
+    this.router.navigate(['login']);
+
   }
 
   goLijst(){
