@@ -28,9 +28,14 @@
           Klant gegevens
         </button>
 
-        <button>
+        <button *ngIf=getAdminKey()>
           <i class="fa-solid fa-lock"></i>
           Admin pagina
+        </button>
+
+        <button (click)="goAfval()">
+          <i class="fa-solid fa-dumpster"></i>
+          Afval inzien
         </button>
 
         <button>

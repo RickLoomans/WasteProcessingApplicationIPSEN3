@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Routes, RouterModule, Router} from '@angular/router';
+import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 import {LoginService} from "../../../../login/Login.service";
 
 @Component({
@@ -12,23 +12,15 @@ export class HomeComponent{
   constructor(private router: Router, private authenticator: LoginService){}
 
   goRestStof(){
-     if(this.authenticator.auth() == true){
-       console.log('hoi');
-       this.router.navigate(['reststofverwerken']);}
+    if(this.authenticator.getkey()){this.router.navigate(['afval'])}
   }
   getKey(): boolean{
-
-    console.log(sessionStorage.getItem('JWT'))
-    console.log(sessionStorage.getItem('key'))
-    if(sessionStorage.getItem('key') == 'true'){
-      return true;
-    }
-    else{
-      return false;
-    }
-
-
+    return sessionStorage.getItem('key') == 'true';
   }
+  getAdminKey(): boolean{
+    return sessionStorage.getItem('adminKey') == 'true';
+  }
+  goAfval(){if(this.authenticator.getAdminKey()){this.router.navigate(['afval'])}}
 
 
   // TODO: greeting verander op basis van tijd en echte naam ophalen.

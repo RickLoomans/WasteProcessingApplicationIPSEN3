@@ -6,6 +6,7 @@ import {AfvalService} from "../../../../afval/afval.service";
 import {AfvalModel} from "../../../../afval/afval.model";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {LoginService} from "../../../../login/Login.service";
 
 
 @Component({
@@ -16,33 +17,9 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 
 export class NavbarComponent {
   @Output() afvalData: AfvalModel[] = []
-  constructor(private router: Router, private http: HttpClient, private afvalService: AfvalService){}
-  goHome(){
-    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
-    let url =  "http://localhost:8080/api/test/user"
-    // @ts-ignore
-    this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
-      // @ts-ignore
-      if(response == 'User Content.'){
-        this.router.navigate(['home']);
-      }
-    })
-
-
-  }
-  goRestStof(){
-    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
-    let url =  "http://localhost:8080/api/test/user"
-    // @ts-ignore
-    this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
-      // @ts-ignore
-      if(response == 'User Content.'){
-        this.router.navigate(['reststofverwerken']);
-      }
-    })
-
-
-  }
+  constructor(private router: Router, private http: HttpClient, private afvalService: AfvalService, private authenticator: LoginService){}
+  goHome(){if(this.authenticator.getkey()){this.router.navigate(['home'])}}
+  goRestStof(){if(this.authenticator.getkey()){this.router.navigate(['reststofverwerken'])}}
   Logout(){
     sessionStorage.removeItem('JWT');
     sessionStorage.removeItem('key');
@@ -50,18 +27,15 @@ export class NavbarComponent {
 
   }
 
-  goLijst(){
-    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
-    let url =  "http://localhost:8080/api/test/admin"
-    // @ts-ignore
-    this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
-      // @ts-ignore
-      if(response == 'Admin Board.'){
-        this.router.navigate(['orderlijst']);
-      }
-    })
+  goLijst(){if(this.authenticator.getkey()){this.router.navigate(['orderlijst'])}}
+  goAfval(){if(this.authenticator.getAdminKey()){this.router.navigate(['afval'])}}
+
+  getKey(): boolean{
+    return sessionStorage.getItem('key') == 'true';
   }
-  goAfval(){this.router.navigate(['afval']);}
+  getAdminKey(): boolean{
+    return sessionStorage.getItem('adminKey') == 'true';
+  }
 
 
 
