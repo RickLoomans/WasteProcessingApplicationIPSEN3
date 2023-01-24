@@ -20,7 +20,7 @@
         <td>{{this.orderlijst[row].metrage}}</td>
         <td>{{this.orderlijst[row].samenstelling}}</td>
         <td>{{this.orderlijst[row].klantid}}</td>
-        <td><button data-cy={verwerkButton} (click)="onVerwerk(this.orderlijst[row])">Verwerk</button></td>
+        <td><button (click)="onVerwerk(this.orderlijst[row])">Verwerk</button></td>
       </tr>
 
     </table>

@@ -7,6 +7,7 @@ import {KlantService} from "../klant-service";
 import {KlantModel} from "../klant-model";
 import {CategorieService} from "../categorie-service";
 import {CategorieModel} from "../categorie-model";
+import {LabelService} from "../label-service";
 
 @Component({
   selector: 'app-resultaat-details',
@@ -53,7 +54,7 @@ export class ResultaatDetailsComponent {
 
   @Input() resultOfProcessing: string[] = [];
 
-  constructor(private stofService: StofService, private klantService: KlantService, private categorieService: CategorieService) { }
+  constructor(private stofService: StofService, private klantService: KlantService, private categorieService: CategorieService, private labelService: LabelService) { }
 
   ngOnInit(): void {
   }
@@ -84,5 +85,13 @@ export class ResultaatDetailsComponent {
         this.categorieData = ((<CategorieModel><unknown>responseData))
       })
     }
+  }
+
+  openLabel() {
+    this.labelService.fetchLabel(this.verwerkteStof.artikelnr).subscribe( responseData => {
+      var blob = new Blob([responseData], { type: 'application/pdf' });
+      var fileURL = window.URL.createObjectURL(blob)
+      window.open(fileURL);
+    })
   }
 }

@@ -19,7 +19,7 @@
   <h4>Verwerking details</h4>
   <p>{{resultOfProcessing[0]}}, eis: {{categorieData.eis}}</p>
   </div>
-  <button class="labelBtn">Label pdf bekijken</button>
+  <button (click)="openLabel()" class="labelBtn">Label pdf bekijken</button>
 </div>
 <div class="box" style="margin-top: 70px" *ngIf="!hasProcessed">
   <h3>Verwerk een van de stoffen om hier het resultaat te zien</h3>
