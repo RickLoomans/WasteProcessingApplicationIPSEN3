@@ -8,7 +8,8 @@ export class AfvallijstService {
   constructor(private http: HttpClient) {}
 
   fetchLijst(naam: string) {
-    return this.http.get<AfvalInfoModel[]>('http://localhost:8080/afvallijst?naam='+ naam)
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
+    return this.http.get<AfvalInfoModel[]>('http://localhost:8080/afvallijst?naam='+ naam ,{headers})
   }
 
 
