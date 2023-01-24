@@ -23,12 +23,13 @@ export class NavbarComponent {
   Logout(){
     sessionStorage.removeItem('JWT');
     sessionStorage.removeItem('key');
+    sessionStorage.removeItem('adminKey');
     this.router.navigate(['login']);
 
   }
 
   goLijst(){if(this.authenticator.getkey()){this.router.navigate(['orderlijst'])}}
-  goAfval(){if(this.authenticator.getAdminKey()){this.router.navigate(['afval'])}}
+  goAfval(){if(this.authenticator.getkey()){this.router.navigate(['afval'])}}
 
   getKey(): boolean{
     return sessionStorage.getItem('key') == 'true';
@@ -37,13 +38,7 @@ export class NavbarComponent {
     return sessionStorage.getItem('adminKey') == 'true';
   }
 
-
-
-
-
-  goAdmin(){
-    this.router.navigate(['admin'])
-  }
+  goAdmin(){if(this.authenticator.getAdminKey()){this.router.navigate(['admin'])}}
 
 
 

@@ -19,6 +19,9 @@ export class RegistrerenComponent {
   ];
   constructor(private register: RegistrerenService) {
   }
+  getAdminKey(): boolean{
+    return sessionStorage.getItem('adminKey') == 'true';
+  }
 
 
   public registrerenGebruiker(){

@@ -8,6 +8,8 @@ import {AfvalComponent} from "./afval/afval.component";
 import {AfvallijstComponent} from "./afval/afvallijst/afvallijst.component";
 import {OrderlijstComponent} from "./orderlijst/orderlijst.component";
 import {LoginComponent} from "./login/login.component";
+import {RegistrerenComponent} from "./admin/registreren/registreren.component";
+import {AdminComponent} from "./admin/admin.component";
 
 
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
       {path: "afval", component: AfvalComponent},
       {path: "afvallijst", component: AfvallijstComponent},
       {path: "orderlijst", component: OrderlijstComponent},
-      {path: "login", component: LoginComponent}
+      {path: "login", component: LoginComponent},
+      {path: "registeren", component: RegistrerenComponent},
+      {path: "admin", component: AdminComponent}
 
   ]}
 ];

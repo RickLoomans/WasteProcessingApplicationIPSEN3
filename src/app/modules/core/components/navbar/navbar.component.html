@@ -17,7 +17,7 @@
 
     <i class="fa-solid fa-clipboard"></i>
   </button>
-  <button *ngIf=getAdminKey()>
+  <button (click)="goAdmin()" *ngIf=getAdminKey()>
     <i class="fa-solid fa-lock"></i>
   </button>
   <button (click)="goAfval()">

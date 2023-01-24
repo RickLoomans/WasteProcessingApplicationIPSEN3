@@ -3,15 +3,6 @@ import { HomeModule } from './modules/home/home.module';
 import { CoreModule } from './modules/core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
-
-
-
-
-
-
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +17,9 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
 import { OrderlijstComponent } from './orderlijst/orderlijst.component';
 import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
 import {LoginService} from "./login/Login.service";
+import {RegistrerenComponent} from "./admin/registreren/registreren.component";
+import {AdminComponent} from "./admin/admin.component";
+import {RegistrerenService} from "./admin/registreren/registreren.service";
 
 
 @NgModule({
@@ -40,7 +34,9 @@ import {LoginService} from "./login/Login.service";
     AfvalComponent,
     AfvallijstComponent,
     LoginComponent,
-    OrderlijstComponent
+    OrderlijstComponent,
+    RegistrerenComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +50,7 @@ import {LoginService} from "./login/Login.service";
 
   ],
   providers: [NavbarComponent,
-  LoginService],
+  LoginService, RegistrerenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
