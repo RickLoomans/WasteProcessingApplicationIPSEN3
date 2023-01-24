@@ -14,7 +14,7 @@ import {ResultaatDetailsComponent} from "../reststof-verwerken/resultaat-details
 export class OrderlijstComponent implements OnInit{
   info$: ReplaySubject<OrderModel[]> = new ReplaySubject<OrderModel[]>(8)
   orderlijst: OrderModel[] = [];
-  verwerkteStof: OrderModel = {gewicht: 0, klantid: 0, magazijnid: 0, metrage: 0, samenstelling: "", artikelnr: ""}
+  verwerkteStof: OrderModel = {gewicht: 0, klantid: 0, metrage: 0, samenstelling: "", artikelnr: ""}
   size: number = 0
   sizeArray: any = [];
   responeData: string[] = [];
@@ -35,30 +35,36 @@ export class OrderlijstComponent implements OnInit{
   }
 
   onVerwerk(stof: OrderModel) {
-    this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage, stof.magazijnid)
+    this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage)
       .subscribe(responseData => {
         this.responeData = responseData;
+        this.child?.getDetails(stof, this.responeData)
       });
-
-    this.child?.getDetails(stof)
 
     if (!this.hasProcessed) {
       this.hasProcessed = true;
     }
+
+    this.orderlijst.splice(this.orderlijst.indexOf(stof), 1)
+    this.updateOrderList();
+
   }
 
   getData() {
     this.info$.subscribe(data => {
       this.orderlijst = data;
 
-      this.size = this.orderlijst.length;
-      this.sizeArray = new Array(this.size);
-      for (let i = 0; i < this.size; i++) {
-        this.sizeArray[i] = i
-      }
+      this.updateOrderList();
 
     })
-
   }
+
+  updateOrderList() {
+  this.size = this.orderlijst.length;
+  this.sizeArray = new Array(this.size);
+  for (let i = 0; i < this.size; i++) {
+  this.sizeArray[i] = i
+}
+}
 
 }

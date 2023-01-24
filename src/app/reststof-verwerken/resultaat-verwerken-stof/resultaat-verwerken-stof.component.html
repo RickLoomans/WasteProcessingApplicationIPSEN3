@@ -1,4 +1,4 @@
-<div class="box">
-  <h2>{{ apiOutVerwerken[0] }}</h2>
-  <h3>Ordernummer: {{ apiOutVerwerken[1] }}</h3>
+<div *ngIf="resultOfProcessing[0] != null" class="box">
+  <h2>{{ resultOfProcessing[0].replace(resultOfProcessing[0].charAt(0),resultOfProcessing[0].charAt(0).toUpperCase()) }}</h2>
+  <h3>Ordernummer: {{ resultOfProcessing[1] }}</h3>
 </div>
