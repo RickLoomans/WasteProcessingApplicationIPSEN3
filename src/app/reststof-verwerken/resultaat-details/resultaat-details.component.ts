@@ -40,7 +40,6 @@ export class ResultaatDetailsComponent {
 
   verwerkteStof: OrderModel = {
     klantid: 0,
-    magazijnid: 0,
     gewicht: 0,
     metrage: 0,
     samenstelling: "",

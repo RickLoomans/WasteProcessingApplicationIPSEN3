@@ -9,6 +9,7 @@ export class AfvalService {
   constructor(private http: HttpClient) { }
 
   fetchAfvalData() {
-    return this.http.get<AfvalModel[]>('http://localhost:8080/afvalinzicht')
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
+    return this.http.get<AfvalModel[]>('http://localhost:8080/afvalinzicht',{headers})
   }
 }

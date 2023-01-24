@@ -8,7 +8,8 @@ export class CategorieService {
   constructor(private http: HttpClient) { }
 
   fetchCategory(categorieNaam: string) {
-    return this.http.get<{ response: CategorieModel }>('http://localhost:8080/categorie/naam?naam='+ categorieNaam)
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
+    return this.http.get<{ response: CategorieModel }>('http://localhost:8080/categorie/naam?naam='+ categorieNaam, {headers})
   }
 
 }
