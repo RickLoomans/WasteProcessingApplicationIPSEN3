@@ -7,6 +7,7 @@ import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwer
 import {AfvalComponent} from "./afval/afval.component";
 import {AfvallijstComponent} from "./afval/afvallijst/afvallijst.component";
 import {OrderlijstComponent} from "./orderlijst/orderlijst.component";
+import {LoginComponent} from "./login/login.component";
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
     {path: "reststofverwerken", component: ReststofVerwerkenComponent},
       {path: "afval", component: AfvalComponent},
       {path: "afvallijst", component: AfvallijstComponent},
-      {path: "orderlijst", component: OrderlijstComponent}
+      {path: "orderlijst", component: OrderlijstComponent},
+      {path: "login", component: LoginComponent}
 
   ]}
 ];

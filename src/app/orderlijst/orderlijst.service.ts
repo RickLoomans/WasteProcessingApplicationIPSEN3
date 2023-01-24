@@ -10,7 +10,8 @@ export class OrderlijstService {
   constructor(private http: HttpClient) {}
 
   fetchLijst() {
-    return this.http.get<OrderModel[]>('http://localhost:8080/orderlijst');
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
+    return this.http.get<OrderModel[]>('http://localhost:8080/orderlijst', {headers});
   }
 
 

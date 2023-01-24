@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
-import {Routes, RouterModule, Router} from '@angular/router';
+import {Router} from '@angular/router';
+import {LoginService} from "../../../../login/Login.service";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  constructor(private router: Router){}
-  goHome(){
-    this.router.navigate(['']);
-  }
+export class HomeComponent{
+
+  constructor(private router: Router, private authenticator: LoginService){}
+
   goRestStof(){
-    this.router.navigate(['reststofverwerken']);
+    if(this.authenticator.getkey()){this.router.navigate(['afval'])}
   }
-  
+  getKey(): boolean{
+    return sessionStorage.getItem('key') == 'true';
+  }
+  getAdminKey(): boolean{
+    return sessionStorage.getItem('adminKey') == 'true';
+  }
+  goAfval(){if(this.authenticator.getAdminKey()){this.router.navigate(['afval'])}}
+
 
   // TODO: greeting verander op basis van tijd en echte naam ophalen.
   public greeting = "Goedemiddag"
