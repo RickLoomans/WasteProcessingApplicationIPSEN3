@@ -49,11 +49,11 @@ export class LoginService {
       {headers}
     ).subscribe((responseData) => {
 
-      this.adminAuth();
+
       sessionStorage.setItem('JWT',responseData.message);
       sessionStorage.setItem("key",String(true));
       this.router.navigate(['home']);
-
+      this.adminAuth();
     })
   }
 
