@@ -8,7 +8,8 @@ export class KlantService {
   constructor(private http: HttpClient) { }
 
   fetchKlant(klantId: number) {
-    return this.http.get<{ response: StofModel }>('http://localhost:8080/klant?id='+ klantId)
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
+    return this.http.get<{ response: StofModel }>('http://localhost:8080/klant?id='+ klantId, {headers})
   }
 
 }

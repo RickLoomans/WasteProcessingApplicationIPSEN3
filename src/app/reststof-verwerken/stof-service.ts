@@ -8,7 +8,8 @@ export class StofService {
   constructor(private http: HttpClient) { }
 
   fetchStof(artikelnr: string) {
-    return this.http.get<{ response: StofModel }>('http://localhost:8080/stof?artikelnr='+ artikelnr)
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
+    return this.http.get<{ response: StofModel }>('http://localhost:8080/stof?artikelnr='+ artikelnr, {headers})
   }
 
 }
