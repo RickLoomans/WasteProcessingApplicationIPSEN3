@@ -1,8 +1,9 @@
 
 
-<section class="navbar">
+<section class="navbar" *ngIf=getKey()>
   <img src="assets/images/logo_alleen_kleur.svg" alt="logo vanDerLelie" class="Logo">
   <button (click)="goHome()">
+
     <i class="fa-solid fa-house fa-8x"></i>
   </button>
   <button >
@@ -11,16 +12,20 @@
   <button (click)="goRestStof()">
     <i class="fa-solid fa-play icon-3x"></i>
   </button>
+
   <button (click)="goLijst()">
+
     <i class="fa-solid fa-clipboard"></i>
   </button>
-  <button (click)="goAdmin()">
+  <button *ngIf=getAdminKey()>
     <i class="fa-solid fa-lock"></i>
   </button>
-  <button>
-    <i class="fa-solid fa-right-from-bracket"></i>
-  </button>
   <button (click)="goAfval()">
+    <i class="fa-solid fa-dumpster"></i>
+  </button>
+
+  <button (click)="Logout()">
     <i class="fa-solid fa-right-from-bracket"></i>
   </button>
+
 </section>

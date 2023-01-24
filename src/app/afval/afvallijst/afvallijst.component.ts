@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AfvallijstService} from "./afvallijst.service";
 import {ReplaySubject} from "rxjs";
-import {AfvalModel} from "../afval.model";
 import {AfvalInfoModel} from "./afvalinfo.model";
 
 
@@ -37,11 +36,8 @@ export class AfvallijstComponent implements OnInit{
         this.sizeArray[i] = i
       }
 
-
     })
 
   }
-
-
 
 }

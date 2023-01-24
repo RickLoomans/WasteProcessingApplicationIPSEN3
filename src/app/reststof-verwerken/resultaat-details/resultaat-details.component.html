@@ -1,14 +1,20 @@
-<h2>Details</h2>
-<h4>Stof details:</h4>
-<p>metrage: {{ metrage }}</p>
-<p>Gewicht: {{ gewicht }} Gram</p>
-<p>Artikelnummer: {{ artikelnummer }}</p>
-<p>Leverancier: {{ leverancier }}</p>
-<p>Productgroep: {{ productgroep }}</p>
-<p>Kleur: {{ kleur }}</p>
-<p>Soort: {{ soort }}</p>
-<hr>
-<h4>Klant details:</h4>
-<p>Een hoop klanten info</p>
-<hr>
-<p>Ordernummer: {{ ordernummer }}</p>
+<div class="box" *ngIf="hasProcessed">
+  <h2>Details</h2>
+  <h4>Stof details:</h4>
+  <p>metrage: {{ verwerkteStof.metrage }}</p>
+  <p>Gewicht: {{ verwerkteStof.gewicht }} Gram</p>
+  <p>Artikelnummer: {{ verwerkteStof.artikelnr }}</p>
+  <p>Leverancier: {{ leverancier }}</p>
+  <p>Productgroep: {{ productgroep }}</p>
+  <p>Kleur: {{ kleur }}</p>
+  <p>Soort: {{ soort }}</p>
+  <hr>
+  <h4>Klant details:</h4>
+  <p>{{klantData.voornaam}}  {{klantData.tussenvoegsel}}  {{klantData.achternaam}}</p>
+  <p>Retour waardes: {{klantData.min_restant_retour}} tot {{klantData.max_restant_retour}}</p>
+  <hr>
+  <button class="labelBtn">Label pdf bekijken</button>
+</div>
+<div class="box" style="margin-top: 70px" *ngIf="!hasProcessed">
+  <h3>Verwerk een van de stoffen om hier het resultaat te zien</h3>
+</div>

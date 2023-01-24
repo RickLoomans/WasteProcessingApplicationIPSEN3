@@ -1,10 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { map } from "rxjs/operators"
+import {HttpClient} from "@angular/common/http";
 import {AfvalModel} from "./afval.model";
 import {AfvalService} from "./afval.service";
-import {StofModel} from "../reststof-verwerken/stof-model";
 import {ReplaySubject} from "rxjs";
 
 
@@ -38,6 +36,7 @@ export class AfvalComponent implements OnInit {
       this.info$.next(data);
     });
     this.getData()
+
 
   }
 

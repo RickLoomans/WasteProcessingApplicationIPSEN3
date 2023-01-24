@@ -1,4 +1,4 @@
-<section class="home">
+<section class="home" *ngIf=getKey()>
 
   <h2>{{greeting}}, {{userFirstName}}</h2>
   <p class="date">Het is vandaag Woensdag 30 November 2022</p>
@@ -28,9 +28,14 @@
           Klant gegevens
         </button>
 
-        <button (click)="goAdmin()">
+        <button *ngIf=getAdminKey()>
           <i class="fa-solid fa-lock"></i>
           Admin pagina
+        </button>
+
+        <button (click)="goAfval()">
+          <i class="fa-solid fa-dumpster"></i>
+          Afval inzien
         </button>
 
         <button>
