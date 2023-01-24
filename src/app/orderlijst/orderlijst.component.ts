@@ -38,27 +38,33 @@ export class OrderlijstComponent implements OnInit{
     this.verwerkenService.verwerkReststof(stof.artikelnr, stof.klantid, stof.metrage, stof.magazijnid)
       .subscribe(responseData => {
         this.responeData = responseData;
+        this.child?.getDetails(stof, this.responeData)
       });
-
-    this.child?.getDetails(stof)
 
     if (!this.hasProcessed) {
       this.hasProcessed = true;
     }
+
+    this.orderlijst.splice(this.orderlijst.indexOf(stof), 1)
+    this.updateOrderList();
+
   }
 
   getData() {
     this.info$.subscribe(data => {
       this.orderlijst = data;
 
-      this.size = this.orderlijst.length;
-      this.sizeArray = new Array(this.size);
-      for (let i = 0; i < this.size; i++) {
-        this.sizeArray[i] = i
-      }
+      this.updateOrderList();
 
     })
-
   }
+
+  updateOrderList() {
+  this.size = this.orderlijst.length;
+  this.sizeArray = new Array(this.size);
+  for (let i = 0; i < this.size; i++) {
+  this.sizeArray[i] = i
+}
+}
 
 }
