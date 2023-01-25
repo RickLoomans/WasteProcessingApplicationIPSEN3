@@ -29,7 +29,6 @@ export class RegistrerenService{
 
     var role = this.selectRole;
 
-    console.log(role);
     const headers = { 'Content-Type': 'application/json','Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
     let url =  "http://localhost:8080/api/auth/signup"
     this.http.post<{message: string}>(url,

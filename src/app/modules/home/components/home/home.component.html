@@ -1,7 +1,7 @@
 <section class="home" *ngIf=getKey()>
 
-  <h2>{{greeting}}, {{userFirstName}}</h2>
-  <p class="date">Het is vandaag Woensdag 30 November 2022</p>
+  <h2>Goedendag</h2>
+  <p class="date">Het is vandaag {{date}}</p>
 
 
   <section class="center">
@@ -18,15 +18,6 @@
           Reststof verwerken
         </button>
 
-        <button>
-          <i class="fa-solid fa-clipboard"></i>
-          Order gegevens
-        </button>
-
-        <button>
-          <i class="fa-solid fa-user"></i>
-          Klant gegevens
-        </button>
 
         <button (click)="goAdmin()" *ngIf=getAdminKey() name="admin">
           <i class="fa-solid fa-lock"></i>
@@ -38,7 +29,7 @@
           Afval inzien
         </button>
 
-        <button>
+        <button (click)="Logout()">
           <i class="fa-solid fa-right-from-bracket"></i>
           Uitloggen
         </button>

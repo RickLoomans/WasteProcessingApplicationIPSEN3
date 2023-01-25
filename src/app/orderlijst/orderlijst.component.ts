@@ -67,4 +67,8 @@ export class OrderlijstComponent implements OnInit{
 }
 }
 
+  getkey(): boolean{
+    return sessionStorage.getItem('key') == 'true';
+  }
+
 }

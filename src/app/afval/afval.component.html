@@ -1,31 +1,33 @@
-<section class="afvalpagina" *ngIf="afvalAlgemeen">
-  <h2>Informatie over afval</h2>
-  <p class="infotext">Bekijk hier hoeveel afvalstof er nog is van elke categorie.</p>
-  <section class="center">
-      <table id="afvaltabel">
-        <tr id="firstrow">
-          <th>Afvalcategorie</th>
-          <th>Aanwezig in kilogram</th>
-          <th>Aanwezig in meter</th>
-        </tr>
-        <tr *ngFor="let row of this.sizeArray">
-          <th>
-            <div class="categoriecel">
-              <span> {{this.afvalData[row].naam}} </span>
-              <div class="dropdown-content">
-                <p>{{this.afvalData[row].eisen}}</p>
-                <button (click)="onZieLijst(this.afvalData[row].naam)">Zie lijst</button>
+<section *ngIf=getkey()>
+  <section class="afvalpagina" *ngIf="afvalAlgemeen">
+    <h2>Informatie over afval</h2>
+    <p class="infotext">Bekijk hier hoeveel afvalstof er nog is van elke categorie.</p>
+    <section class="center">
+        <table id="afvaltabel">
+          <tr id="firstrow">
+            <th>Afvalcategorie</th>
+            <th>Aanwezig in kilogram</th>
+            <th>Aanwezig in meter</th>
+          </tr>
+          <tr *ngFor="let row of this.sizeArray">
+            <th>
+              <div class="categoriecel">
+                <span> {{this.afvalData[row].naam}} </span>
+                <div class="dropdown-content">
+                  <p>{{this.afvalData[row].eisen}}</p>
+                  <button (click)="onZieLijst(this.afvalData[row].naam)">Zie lijst</button>
+                </div>
               </div>
-            </div>
-            </th>
-          <td>{{this.afvalData[row].gewicht}}</td>
-          <td>{{this.afvalData[row].metrage}}</td>
-        </tr>
-      </table>
+              </th>
+            <td>{{this.afvalData[row].gewicht}}</td>
+            <td>{{this.afvalData[row].metrage}}</td>
+          </tr>
+        </table>
 
 
+    </section>
+    <img src="./assets/images/undraw_collecting_re_lp6p.svg">
   </section>
-  <img src="./assets/images/undraw_collecting_re_lp6p.svg">
-</section>
 
-<app-afvallijst [categorie]=nameCategorie *ngIf="!afvalAlgemeen"></app-afvallijst>
+  <app-afvallijst [categorie]=nameCategorie *ngIf="!afvalAlgemeen"></app-afvallijst>
+</section>
