@@ -77,7 +77,6 @@ export class ResultaatDetailsComponent {
 
     this.klantService.fetchKlant(verwerkteStofDetails.klantid).subscribe(responseData => {
       this.klantData = ((<KlantModel><unknown>responseData));
-      console.log(this.klantData);
     })
 
     if (responeData[0].startsWith("Afval")){
