@@ -1,5 +1,5 @@
 <section class="afvallijst">
-  <section class="center">
+  <section class="center" *ngIf=getkey()>
     <h2>Te verwerken stoffen ({{orderlijst.length}})</h2>
     <p class="infotext">Lijst van alle stoffen die verwerkt moeten worden</p>
     <table id="table" class="lijst">

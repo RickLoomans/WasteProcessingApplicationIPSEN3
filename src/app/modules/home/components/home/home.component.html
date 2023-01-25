@@ -18,15 +18,6 @@
           Reststof verwerken
         </button>
 
-        <button>
-          <i class="fa-solid fa-clipboard"></i>
-          Order gegevens
-        </button>
-
-        <button>
-          <i class="fa-solid fa-user"></i>
-          Klant gegevens
-        </button>
 
         <button (click)="goAdmin()" *ngIf=getAdminKey() name="admin">
           <i class="fa-solid fa-lock"></i>
@@ -38,7 +29,7 @@
           Afval inzien
         </button>
 
-        <button>
+        <button (click)="Logout()">
           <i class="fa-solid fa-right-from-bracket"></i>
           Uitloggen
         </button>

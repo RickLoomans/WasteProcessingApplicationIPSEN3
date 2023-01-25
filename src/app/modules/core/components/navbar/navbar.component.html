@@ -6,17 +6,13 @@
 
     <i class="fa-solid fa-house fa-8x"></i>
   </button>
-  <button >
+  <button (click)="goCatagorie()">
     <i class="fa-solid fa-plus icon-2x"></i>
   </button>
-  <button (click)="goRestStof()">
+  <button (click)="goLijst()">
     <i class="fa-solid fa-play icon-3x"></i>
   </button>
 
-  <button (click)="goLijst()">
-
-    <i class="fa-solid fa-clipboard"></i>
-  </button>
   <button (click)="goAdmin()" *ngIf=getAdminKey()>
     <i class="fa-solid fa-lock"></i>
   </button>

@@ -60,6 +60,9 @@ export class AfvalComponent implements OnInit {
     this.afvalAlgemeen = false;
     this.nameCategorie = categorie;
   }
+  getkey(): boolean{
+    return sessionStorage.getItem('key') == 'true';
+  }
 
 
 }

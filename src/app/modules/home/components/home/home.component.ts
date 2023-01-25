@@ -12,11 +12,11 @@ export class HomeComponent{
   constructor(private router: Router, private authenticator: LoginService){}
 
   goCategorieToevoegen() {
-    this.router.navigate(['categorietoevoegen']);
+    if(this.authenticator.getkey()){this.router.navigate(['categorietoevoegen'])}
   }
 
   goRestStof(){
-    if(this.authenticator.getkey()){this.router.navigate(['afval'])}
+    if(this.authenticator.getkey()){this.router.navigate(['orderlijst'])}
   }
   getKey(): boolean{
     return sessionStorage.getItem('key') == 'true';
@@ -31,5 +31,13 @@ export class HomeComponent{
   // TODO: greeting verander op basis van tijd en echte naam ophalen.
   public greeting = "Goedemiddag"
   public userFirstName = "Peter"
+
+  Logout(){
+    sessionStorage.removeItem('JWT');
+    sessionStorage.removeItem('key');
+    sessionStorage.removeItem('adminKey');
+    this.router.navigate(['login']);
+
+  }
 
 }

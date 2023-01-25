@@ -1,7 +1,6 @@
 
 import {Component, Output} from '@angular/core';
 import {Routes, RouterModule, Router} from '@angular/router';
-import { ReststofVerwerkenComponent } from 'src/app/modules/reststof/components/reststof-verwerken/reststof-verwerken.component';
 import {AfvalService} from "../../../../afval/afval.service";
 import {AfvalModel} from "../../../../afval/afval.model";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
@@ -19,7 +18,6 @@ export class NavbarComponent {
   @Output() afvalData: AfvalModel[] = []
   constructor(private router: Router, private http: HttpClient, private afvalService: AfvalService, private authenticator: LoginService){}
   goHome(){if(this.authenticator.getkey()){this.router.navigate(['home'])}}
-  goRestStof(){if(this.authenticator.getkey()){this.router.navigate(['reststofverwerken'])}}
   Logout(){
     sessionStorage.removeItem('JWT');
     sessionStorage.removeItem('key');
@@ -30,6 +28,8 @@ export class NavbarComponent {
 
   goLijst(){if(this.authenticator.getkey()){this.router.navigate(['orderlijst'])}}
   goAfval(){if(this.authenticator.getkey()){this.router.navigate(['afval'])}}
+
+  goCatagorie(){if(this.authenticator.getkey()){this.router.navigate(['categorietoevoegen'])}}
 
   getKey(): boolean{
     return sessionStorage.getItem('key') == 'true';

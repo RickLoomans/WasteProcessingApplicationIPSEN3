@@ -36,5 +36,9 @@ export class CategorieToevoegenComponent {
   onClosePopUp() {
     this.message = "";
   }
+  getkey(): boolean{
+    return sessionStorage.getItem('key') == 'true';
+  }
+
 
 }
