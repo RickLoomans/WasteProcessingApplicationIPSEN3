@@ -11,10 +11,16 @@ export class HomeComponent {
   goHome(){
     this.router.navigate(['']);
   }
+
+  goCategorieToevoegen() {
+    this.router.navigate(['categorietoevoegen']);
+  }
+
+
   goRestStof(){
     this.router.navigate(['reststofverwerken']);
   }
-  
+
 
   // TODO: greeting verander op basis van tijd en echte naam ophalen.
   public greeting = "Goedemiddag"

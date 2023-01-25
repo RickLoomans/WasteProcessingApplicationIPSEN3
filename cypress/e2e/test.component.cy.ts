@@ -1,9 +1,6 @@
 
 describe('AfvalComponent', () => {
-
-  it('hoi', () => {
-    cy.visit('http://localhost:4200/afval')
-  })
+  
 
   it('should find 45', () => {
       cy.intercept({

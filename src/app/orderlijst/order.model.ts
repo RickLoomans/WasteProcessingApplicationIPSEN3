@@ -5,5 +5,6 @@ export interface OrderModel {
   magazijnid: number;
   samenstelling: string;
   gewicht: number;
+  kleur: string;
 
 }

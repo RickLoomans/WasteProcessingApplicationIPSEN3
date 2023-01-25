@@ -40,6 +40,7 @@ export class ResultaatDetailsComponent {
     gewicht: 0,
     metrage: 0,
     samenstelling: "",
+    kleur: "",
     artikelnr: ""
   }
 
@@ -63,7 +64,8 @@ export class ResultaatDetailsComponent {
     });
 
     this.klantService.fetchKlant(verwerkteStofDetails.klantid).subscribe(responseData => {
-      this.klantData = ((<KlantModel><unknown>responseData))
+      this.klantData = ((<KlantModel><unknown>responseData));
+      console.log(this.klantData);
     })
   }
 }

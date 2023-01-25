@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
@@ -15,6 +16,8 @@ import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
 import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
 import { OrderlijstComponent } from './orderlijst/orderlijst.component';
+import { CategorieToevoegenComponent } from './categorie-toevoegen/categorie-toevoegen.component';
+import {CategorieAlertComponent} from "./categorie-toevoegen/alert/categoriealert.component";
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { OrderlijstComponent } from './orderlijst/orderlijst.component';
     VerwerkenInputComponent,
     AfvalComponent,
     AfvallijstComponent,
-    OrderlijstComponent
+    OrderlijstComponent,
+    CategorieToevoegenComponent,
+    CategorieAlertComponent
+
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,7 @@ import { OrderlijstComponent } from './orderlijst/orderlijst.component';
     ReststofModule,
     HttpClientModule,
     FormsModule,
+
 
   ],
   providers: [],

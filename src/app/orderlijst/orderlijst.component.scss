@@ -38,12 +38,17 @@
     border-collapse: separate;
     border-spacing: 0 10px;
 
+    th {
+      font-size: 13px;
+    }
+
 
     td {
       border: white;
       border-style: solid none;
       padding: 10px;
       background-color: white;
+      font-size: 13px;
     }
 
     td:first-child {
@@ -107,8 +112,8 @@ button {
   border-radius: 2px;
   color: white;
   background-color: #002147;
-  font-size: 14px;
-  padding: 6px;
+  font-size: 11px;
+  padding: 5px;
   font-weight: bold;
   border: solid 1px #002147;
 }
