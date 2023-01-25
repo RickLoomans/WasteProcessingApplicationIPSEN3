@@ -65,7 +65,6 @@ export class ResultaatDetailsComponent {
     }
 
     this.stofService.fetchStof(verwerkteStofDetails.artikelnr).subscribe(responseData => {
-      console.log(responseData)
       const stofData = ((<StofModel><unknown>responseData));
       this.verwerkteStof = verwerkteStofDetails;
       this.leverancier = stofData.leverancier;
