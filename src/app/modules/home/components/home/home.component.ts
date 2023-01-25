@@ -9,10 +9,17 @@ import {LoginService} from "../../../../login/Login.service";
 })
 export class HomeComponent{
 
+  date: string = '';
+
   constructor(private router: Router, private authenticator: LoginService){}
 
   goCategorieToevoegen() {
     if(this.authenticator.getkey()){this.router.navigate(['categorietoevoegen'])}
+  }
+
+
+  ngOnInit() {
+    this.date = new Date().toDateString()
   }
 
   goRestStof(){
