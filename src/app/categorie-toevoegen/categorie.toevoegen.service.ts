@@ -9,8 +9,9 @@ export class CategorieToevoegenService {
   constructor(private http: HttpClient) { }
 
   voegCategorieToe(naam: string, eisen: string, kleur: string) {
+    const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT')};
     const postData : CategorieToevoegenModel = { naam: naam, eisen: eisen, kleur: kleur }
-    return this.http.post('http://localhost:8080/categorie/add', postData, { responseType: 'text' });
+    return this.http.post('http://localhost:8080/categorie/add', postData, { responseType: 'text', headers});
   }
 
 }
