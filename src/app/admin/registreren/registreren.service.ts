@@ -6,7 +6,7 @@ import {RegistrerenComponent} from "./registreren.component";
 
 @Injectable()
 export class RegistrerenService{
-  constructor(private router: Router, private http: HttpClient, private navbar: NavbarComponent,){}
+  constructor(private router: Router, private http: HttpClient){}
 
 
   selectRole: string = '';
@@ -42,7 +42,7 @@ export class RegistrerenService{
     ).subscribe((responseData) => {
 
 
-      this.navbar.goAdmin();
+      this.router.navigate(['admin']);
 
     })
 
