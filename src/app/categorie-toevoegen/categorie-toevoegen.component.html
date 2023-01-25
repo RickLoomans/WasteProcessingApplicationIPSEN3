@@ -1,0 +1,51 @@
+<section class="categorietoevoegen">
+  <h2>Categorie toevoegen</h2>
+  <p class="text">Op deze pagina kan je een afvalcategorie toevoegen.</p>
+</section>
+
+<section class="center">
+  <div>
+
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="naam">
+        <div>
+          <label for="naam">
+            Wat is de naam van de categorie?
+            <p>Dit is de naam die ook in de afvaltabel en op het label zal staan.</p>
+          </label>
+        </div>
+        <div>
+          <input type="text" id="naam" ngModel name="naam" required>
+        </div>
+      </div>
+      <div class="eisen">
+        <div>
+          <label for="eisen">
+            Welke samenstelling(en) moeten stoffen hebben om in deze categorie te komen?
+            <p>Gebruik :: voor OF</p>
+            <p>Gebuik > voor groter dan en < voor kleiner dan</p>
+            <p>Voorbeeld: >50% PL && <99% PL + Overig || >50% PES && <99% PES + Overig</p>
+          </label>
+        </div>
+        <div>
+          <input type="text" id="eisen" ngModel name="eisen" required>
+        </div>
+      </div>
+      <div class="kleur">
+        <div>
+          <label for="kleur">
+            Welke kleur moeten stoffen in deze categorie hebben?
+            <p>Voer de kleur in met de naam die al bekend is in het systeem (dit is dus een getal)</p>
+            <p>Is optioneel</p>
+          </label>
+        </div>
+      </div>
+      <div>
+        <input type="text" id="kleur" ngModel name="kleur">
+      </div>
+      <button type="submit" [disabled]="!f.valid">Toevoegen</button>
+    </form>
+    <app-categorie-alert [message]="message" *ngIf="message" (close)="onClosePopUp()"></app-categorie-alert>
+  </div>
+</section>
+<img class=image src="assets/images/undraw_online_test_re_kyfx.svg" alt="decorative image">

@@ -1,0 +1,88 @@
+.categorietoevoegen {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 25px;
+  box-sizing: border-box;
+  position: relative;
+  flex: 1;
+
+  h2 {
+    font-weight: lighter;
+    color: #002147;
+    margin: 0;
+  }
+
+  .text {
+    margin: 0;
+    color: #AEB2B6;
+    font-size: 0.8em;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    margin: 2px;
+    color: #AEB2B6;
+    font-size: 0.8em;
+  }
+
+  h4 {
+    color: #002147;
+    font-weight: lighter;
+  }
+
+  input {
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+  }
+
+  .ng-invalid {
+    input.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+
+    button {
+      background-color: #f6b17e;
+    }
+  }
+
+  button {
+    border-radius: 2px;
+    color: white;
+    background-color: #f89043;
+    margin: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: solid 1px #f89043;
+    width: 120px;
+  }
+
+  h4 {
+    background-color: #002147;
+    color: white;
+    width: max-content;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #002147;
+    border-radius: 5px;
+    white-space: pre-wrap
+  }
+
+}
+
+img {
+  position: fixed;
+  bottom: 0;
+  right: 25px;
+  z-index: 0;
+  width: 250px;
+}

@@ -25,6 +25,12 @@
   justify-content: center;
   flex-direction: column;
 
+  .tableContainer {
+    height: 600px;
+    overflow: hidden;
+  }
+
+
 
   h2 {
     margin: auto;
@@ -38,6 +44,8 @@
     margin: auto;
     margin-top: 50px;
     border-radius: 5px;
+    position: sticky;
+    top: 0;
 
 
     button {
