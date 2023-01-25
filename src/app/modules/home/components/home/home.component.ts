@@ -20,7 +20,9 @@ export class HomeComponent{
   getAdminKey(): boolean{
     return sessionStorage.getItem('adminKey') == 'true';
   }
-  goAfval(){if(this.authenticator.getAdminKey()){this.router.navigate(['afval'])}}
+  goAfval(){if(this.authenticator.getkey()){this.router.navigate(['afval'])}}
+
+  goAdmin(){if(this.authenticator.getAdminKey()){this.router.navigate(['admin'])}}
 
 
   // TODO: greeting verander op basis van tijd en echte naam ophalen.

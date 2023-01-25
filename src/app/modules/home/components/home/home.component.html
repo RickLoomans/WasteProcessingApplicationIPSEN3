@@ -28,7 +28,7 @@
           Klant gegevens
         </button>
 
-        <button *ngIf=getAdminKey()>
+        <button (click)="goAdmin()" *ngIf=getAdminKey() name="admin">
           <i class="fa-solid fa-lock"></i>
           Admin pagina
         </button>
