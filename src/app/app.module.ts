@@ -5,8 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-
+import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
@@ -18,6 +17,11 @@ import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-detail
 import { OrderlijstComponent } from './orderlijst/orderlijst.component';
 import { CategorieToevoegenComponent } from './categorie-toevoegen/categorie-toevoegen.component';
 import {CategorieAlertComponent} from "./categorie-toevoegen/alert/categoriealert.component";
+import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
+import {LoginService} from "./login/Login.service";
+import {RegistrerenComponent} from "./admin/registreren/registreren.component";
+import {AdminComponent} from "./admin/admin.component";
+import {RegistrerenService} from "./admin/registreren/registreren.service";
 
 
 @NgModule({
@@ -32,8 +36,12 @@ import {CategorieAlertComponent} from "./categorie-toevoegen/alert/categoriealer
     AfvallijstComponent,
     OrderlijstComponent,
     CategorieToevoegenComponent,
-    CategorieAlertComponent
+    CategorieAlertComponent,
 
+    LoginComponent,
+    OrderlijstComponent,
+    RegistrerenComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +52,9 @@ import {CategorieAlertComponent} from "./categorie-toevoegen/alert/categoriealer
     HttpClientModule,
     FormsModule,
 
-
   ],
-  providers: [],
+  providers: [NavbarComponent,
+  LoginService, RegistrerenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
