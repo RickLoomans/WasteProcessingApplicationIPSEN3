@@ -15,6 +15,8 @@ import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
 import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
 import { OrderlijstComponent } from './orderlijst/orderlijst.component';
+import { CategorieToevoegenComponent } from './categorie-toevoegen/categorie-toevoegen.component';
+import {CategorieAlertComponent} from "./categorie-toevoegen/alert/categoriealert.component";
 import {NavbarComponent} from "./modules/core/components/navbar/navbar.component";
 import {LoginService} from "./login/Login.service";
 import {RegistrerenComponent} from "./admin/registreren/registreren.component";
@@ -28,11 +30,14 @@ import {RegistrerenService} from "./admin/registreren/registreren.service";
     ReststofVerwerkenComponent,
     ResultaatVerwerkenStofComponent,
     VerwerkenInputComponent,
-
     ResultaatDetailsComponent,
     VerwerkenInputComponent,
     AfvalComponent,
     AfvallijstComponent,
+    OrderlijstComponent,
+    CategorieToevoegenComponent,
+    CategorieAlertComponent,
+
     LoginComponent,
     OrderlijstComponent,
     RegistrerenComponent,
@@ -45,7 +50,6 @@ import {RegistrerenService} from "./admin/registreren/registreren.service";
     HomeModule,
     ReststofModule,
     HttpClientModule,
-
     FormsModule,
 
   ],

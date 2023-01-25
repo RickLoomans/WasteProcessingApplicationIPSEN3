@@ -8,6 +8,7 @@
         <th>Gewicht</th>
         <th>Metrage</th>
         <th>Samenstelling</th>
+        <th>Kleur</th>
         <th>Klant ID</th>
         <th>Knop</th>
 
@@ -19,6 +20,7 @@
         <td>{{this.orderlijst[row].gewicht}}</td>
         <td>{{this.orderlijst[row].metrage}}</td>
         <td>{{this.orderlijst[row].samenstelling}}</td>
+        <td>{{this.orderlijst[row].kleur}}</td>
         <td>{{this.orderlijst[row].klantid}}</td>
         <td><button (click)="onVerwerk(this.orderlijst[row])">Verwerk</button></td>
       </tr>

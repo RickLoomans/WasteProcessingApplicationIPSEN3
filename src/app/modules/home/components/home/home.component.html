@@ -2,15 +2,15 @@
 
   <h2>{{greeting}}, {{userFirstName}}</h2>
   <p class="date">Het is vandaag Woensdag 30 November 2022</p>
-  <!-- TODO: echte datum erin -->
+
 
   <section class="center">
     <section class="quick-actions">
       <h5>Snel naar</h5>
       <section class="actions">
-        <button>
+        <button (click)="goCategorieToevoegen()">
           <i class="fa-solid fa-plus"></i>
-          Artikelstof toevoegen
+          Categorie toevoegen
         </button>
 
         <button (click)="goRestStof()">

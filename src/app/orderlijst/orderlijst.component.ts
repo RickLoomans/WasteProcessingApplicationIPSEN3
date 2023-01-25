@@ -14,7 +14,7 @@ import {ResultaatDetailsComponent} from "../reststof-verwerken/resultaat-details
 export class OrderlijstComponent implements OnInit{
   info$: ReplaySubject<OrderModel[]> = new ReplaySubject<OrderModel[]>(8)
   orderlijst: OrderModel[] = [];
-  verwerkteStof: OrderModel = {gewicht: 0, klantid: 0, metrage: 0, samenstelling: "", artikelnr: ""}
+  verwerkteStof: OrderModel = {gewicht: 0, klantid: 0, metrage: 0, samenstelling: "", artikelnr: "", kleur: ""}
   size: number = 0
   sizeArray: any = [];
   responeData: string[] = [];

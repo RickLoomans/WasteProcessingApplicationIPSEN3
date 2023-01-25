@@ -11,6 +11,10 @@ export class HomeComponent{
 
   constructor(private router: Router, private authenticator: LoginService){}
 
+  goCategorieToevoegen() {
+    this.router.navigate(['categorietoevoegen']);
+  }
+
   goRestStof(){
     if(this.authenticator.getkey()){this.router.navigate(['afval'])}
   }
@@ -23,7 +27,6 @@ export class HomeComponent{
   goAfval(){if(this.authenticator.getkey()){this.router.navigate(['afval'])}}
 
   goAdmin(){if(this.authenticator.getAdminKey()){this.router.navigate(['admin'])}}
-
 
   // TODO: greeting verander op basis van tijd en echte naam ophalen.
   public greeting = "Goedemiddag"
