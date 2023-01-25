@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  // TODO: Echte gebruiker zijn naam halen
-  public userName = "Peter de Jong";
+  public userType = "";
+
+
+  ngOnInit() {
+      if(sessionStorage.getItem('adminKey') == 'true') {
+      this.userType = "Admin";
+    } else {
+      this.userType = "User";
+    }
+
+  }
+
+
 
 }

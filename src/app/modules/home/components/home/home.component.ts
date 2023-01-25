@@ -9,7 +9,13 @@ import {LoginService} from "../../../../login/Login.service";
 })
 export class HomeComponent{
 
+  date: string = '';
+
   constructor(private router: Router, private authenticator: LoginService){}
+
+  ngOnInit() {
+    this.date = new Date().toDateString()
+  }
 
   goRestStof(){
     if(this.authenticator.getkey()){this.router.navigate(['afval'])}
@@ -23,10 +29,5 @@ export class HomeComponent{
   goAfval(){if(this.authenticator.getkey()){this.router.navigate(['afval'])}}
 
   goAdmin(){if(this.authenticator.getAdminKey()){this.router.navigate(['admin'])}}
-
-
-  // TODO: greeting verander op basis van tijd en echte naam ophalen.
-  public greeting = "Goedemiddag"
-  public userFirstName = "Peter"
 
 }
