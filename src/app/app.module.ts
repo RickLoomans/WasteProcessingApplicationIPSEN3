@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ResultaatVerwerkenStofComponent } from './reststof-verwerken/resultaat-verwerken-stof/resultaat-verwerken-stof.component';
-import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/verwerken-input.component';
 import { AfvalComponent } from './afval/afval.component';
 import { AfvallijstComponent } from './afval/afvallijst/afvallijst.component';
 import { ResultaatDetailsComponent } from './reststof-verwerken/resultaat-details/resultaat-details.component';
@@ -22,20 +21,16 @@ import {RegistrerenComponent} from "./admin/registreren/registreren.component";
 import {AdminComponent} from "./admin/admin.component";
 import {RegistrerenService} from "./admin/registreren/registreren.service";
 
-
 @NgModule({
   declarations: [
     AppComponent,
     ResultaatVerwerkenStofComponent,
-    VerwerkenInputComponent,
     ResultaatDetailsComponent,
-    VerwerkenInputComponent,
     AfvalComponent,
     AfvallijstComponent,
     OrderlijstComponent,
     CategorieToevoegenComponent,
     CategorieAlertComponent,
-
     LoginComponent,
     OrderlijstComponent,
     RegistrerenComponent,

@@ -35,12 +35,8 @@ export class RegistrerenService{
       },
       {headers}
     ).subscribe((responseData) => {
-
-
       this.router.navigate(['admin']);
-
     })
-
 
   }
 

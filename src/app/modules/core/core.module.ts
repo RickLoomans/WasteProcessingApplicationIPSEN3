@@ -5,8 +5,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
-
-
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -16,7 +14,7 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [
     CommonModule,
     RouterModule,
-    
   ]
 })
+
 export class CoreModule { }

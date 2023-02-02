@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent
@@ -12,4 +10,5 @@ import { HomeComponent } from './components/home/home.component';
     CommonModule
   ]
 })
+
 export class HomeModule { }

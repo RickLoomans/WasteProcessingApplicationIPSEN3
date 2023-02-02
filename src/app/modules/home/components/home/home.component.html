@@ -1,8 +1,6 @@
 <section class="home" *ngIf=getKey()>
-
   <h2>Goedendag</h2>
   <p class="date">Het is vandaag {{date}}</p>
-
 
   <section class="center">
     <section class="quick-actions">
@@ -17,7 +15,6 @@
           <i class="fa-solid fa-play"></i>
           Reststof verwerken
         </button>
-
 
         <button (click)="goAdmin()" *ngIf=getAdminKey() name="admin">
           <i class="fa-solid fa-lock"></i>
@@ -36,7 +33,5 @@
       </section>
     </section>
   </section>
-
   <img src="assets/images/illustrations/order-delivered.svg" alt="Illustratie Order" class="illustration">
-
 </section>

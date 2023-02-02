@@ -31,7 +31,6 @@ export class OrderlijstComponent implements OnInit{
       this.info$.next(data)
     })
     this.getData()
-
   }
 
   onVerwerk(stof: OrderModel) {
@@ -55,7 +54,6 @@ export class OrderlijstComponent implements OnInit{
       this.orderlijst = data;
 
       this.updateOrderList();
-
     })
   }
 
@@ -70,5 +68,4 @@ export class OrderlijstComponent implements OnInit{
   getkey(): boolean{
     return sessionStorage.getItem('key') == 'true';
   }
-
 }

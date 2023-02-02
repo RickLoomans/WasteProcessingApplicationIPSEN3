@@ -3,7 +3,6 @@ import {AfvallijstService} from "./afvallijst.service";
 import {ReplaySubject} from "rxjs";
 import {AfvalInfoModel} from "./afvalinfo.model";
 
-
 @Component({
   selector: 'app-afvallijst',
   templateUrl: './afvallijst.component.html',
@@ -18,12 +17,12 @@ export class AfvallijstComponent implements OnInit{
 
   constructor(private afvallijstService: AfvallijstService) {
   }
+
   ngOnInit() {
     this.afvallijstService.fetchLijst(this.name).subscribe(data => {
       this.info$.next(data)
     })
     this.getData()
-
   }
 
   getData() {
@@ -35,9 +34,7 @@ export class AfvallijstComponent implements OnInit{
       for (let i = 0; i < this.size; i++) {
         this.sizeArray[i] = i
       }
-
     })
-
   }
 
 }

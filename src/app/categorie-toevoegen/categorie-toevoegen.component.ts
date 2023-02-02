@@ -17,7 +17,6 @@ export class CategorieToevoegenComponent {
   constructor(private categorieToevoegenService: CategorieToevoegenService) {
   }
 
-
   onSubmit(form: NgForm) {
     this.categorieToevoegenService.voegCategorieToe(form.value.naam, form.value.eisen, form.value.kleur).subscribe(data => {
       this.info$.next(data)
@@ -30,7 +29,6 @@ export class CategorieToevoegenComponent {
     this.info$.subscribe(data => {
       this.message = data;
     })
-    console.log(this.message);
   }
 
   onClosePopUp() {
@@ -39,6 +37,5 @@ export class CategorieToevoegenComponent {
   getkey(): boolean{
     return sessionStorage.getItem('key') == 'true';
   }
-
 
 }

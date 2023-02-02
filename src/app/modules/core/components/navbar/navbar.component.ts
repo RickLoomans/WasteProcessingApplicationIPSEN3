@@ -1,10 +1,9 @@
 
 import {Component, Output} from '@angular/core';
-import {Routes, RouterModule, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {AfvalService} from "../../../../afval/afval.service";
 import {AfvalModel} from "../../../../afval/afval.model";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+import {HttpClient} from "@angular/common/http";
 import {LoginService} from "../../../../login/Login.service";
 
 
@@ -23,7 +22,6 @@ export class NavbarComponent {
     sessionStorage.removeItem('key');
     sessionStorage.removeItem('adminKey');
     this.router.navigate(['login']);
-
   }
 
   goLijst(){if(this.authenticator.getkey()){this.router.navigate(['orderlijst'])}}

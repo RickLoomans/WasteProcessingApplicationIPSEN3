@@ -5,19 +5,17 @@ import {AfvalModel} from "./afval.model";
 import {AfvalService} from "./afval.service";
 import {ReplaySubject} from "rxjs";
 
-
-
 @Component({
   selector: 'app-afval',
   templateUrl: './afval.component.html',
   styleUrls: ['./afval.component.scss']
 })
+
 export class AfvalComponent implements OnInit {
   @Output() onLijst = new EventEmitter<string>();
   nameCategorie: string = '';
   afvalData: AfvalModel[] = [];
   isFetching = false;
-  naam1: string[] = [];
   gewicht: number = 0;
   metrage: number = 0;
   info$: ReplaySubject<AfvalModel[]> = new ReplaySubject<AfvalModel[]>(3)
@@ -37,7 +35,6 @@ export class AfvalComponent implements OnInit {
     });
     this.getData()
 
-
   }
 
   getData() {
@@ -48,7 +45,6 @@ export class AfvalComponent implements OnInit {
       for (let i = 0; i < this.size; i++) {
         this.sizeArray[i] = i
       }
-
 
     })
 

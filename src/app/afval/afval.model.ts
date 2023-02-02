@@ -3,5 +3,4 @@ export interface AfvalModel {
   gewicht: number;
   metrage: number;
   eisen: string;
-
 }
