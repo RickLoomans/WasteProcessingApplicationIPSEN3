@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router, RouterModule} from "@angular/router";
+import {Router} from "@angular/router";
 import {LoginService} from "../login/Login.service";
 
 @Component({
@@ -13,6 +13,7 @@ export class AdminComponent {
   }
 
   goRegistreren(){if(this.authenticator.getAdminKey()){this.router.navigate(['registeren'])}}
+
   getAdminKey(): boolean{
     return sessionStorage.getItem('adminKey') == 'true';
   }

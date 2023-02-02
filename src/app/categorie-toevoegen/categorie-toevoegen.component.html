@@ -3,7 +3,6 @@
     <h2>Categorie toevoegen</h2>
     <p class="text">Op deze pagina kan je een afvalcategorie toevoegen.</p>
   </section>
-
   <section class="center">
     <div>
 
@@ -47,7 +46,6 @@
         <button type="submit" [disabled]="!f.valid">Toevoegen</button>
       </form>
       <app-categorie-alert [message]="message" *ngIf="message" (close)="onClosePopUp()"></app-categorie-alert>
-    <!--<h4 class="message" *ngIf="message">{{message}}</h4>-->
     </div>
   </section>
   <img class=image src="assets/images/undraw_online_test_re_kyfx.svg" alt="decorative image">

@@ -11,18 +11,18 @@ import {NavbarComponent} from "../../modules/core/components/navbar/navbar.compo
 })
 export class RegistrerenComponent {
 
-
   roles: any = [
     'user',
     'mod',
     'admin'
   ];
+
   constructor(private register: RegistrerenService) {
   }
+
   getAdminKey(): boolean{
     return sessionStorage.getItem('adminKey') == 'true';
   }
-
 
   public registrerenGebruiker(){
     this.register.Registreer();

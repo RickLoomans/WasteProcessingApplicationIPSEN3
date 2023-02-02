@@ -17,7 +17,6 @@ export class HomeComponent{
     if(this.authenticator.getkey()){this.router.navigate(['categorietoevoegen'])}
   }
 
-
   ngOnInit() {
     this.date = new Date().toDateString()
   }
@@ -34,10 +33,6 @@ export class HomeComponent{
   goAfval(){if(this.authenticator.getkey()){this.router.navigate(['afval'])}}
 
   goAdmin(){if(this.authenticator.getAdminKey()){this.router.navigate(['admin'])}}
-
-  // TODO: greeting verander op basis van tijd en echte naam ophalen.
-  public greeting = "Goedemiddag"
-  public userFirstName = "Peter"
 
   Logout(){
     sessionStorage.removeItem('JWT');

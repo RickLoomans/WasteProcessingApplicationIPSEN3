@@ -9,9 +9,7 @@
         <th>Gewicht</th>
         <th>Samenstelling</th>
         <th>Klant ID</th>
-
       </tr>
-
 
       <tr *ngFor="let row of this.sizeArray" class="item">
         <td>{{this.afvallijstData[row].ordernr}}</td>
@@ -20,7 +18,6 @@
         <td>{{this.afvallijstData[row].samenstelling}}</td>
         <td>{{this.afvallijstData[row].klantid}}</td>
       </tr>
-
     </table>
   </section>
   <img src="./assets/images/undraw_collecting_re_lp6p.svg">

@@ -9,10 +9,9 @@ body{
   border-width: 2px;
   border-radius: 20px;
   border-color: lightgrey;
-
   background-color: white;
-
 }
+
 H1{
   font-weight: lighter;
   color: rgba(0, 4, 40, 0.87);
@@ -21,8 +20,8 @@ H1{
         margin-left: 40px;
     margin-bottom: -20px
 }
-p{
 
+p{
   color: rgba(0, 4, 40, 0.87);
     margin-right: 130px;
     margin-left: 40px;
@@ -32,8 +31,6 @@ p{
   color: red;
 }
 input {
-
-
     font-size: 20px;
     width: 80%;
     margin-left: 40px;
@@ -42,9 +39,11 @@ input {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+
 img{
   width: 250px;
 }
+
 button{
   position: relative;
   margin-right: 10px;

@@ -1,5 +1,3 @@
-
-
 export interface AfvalInfoModel{
   categorie: string;
   klantid: number;

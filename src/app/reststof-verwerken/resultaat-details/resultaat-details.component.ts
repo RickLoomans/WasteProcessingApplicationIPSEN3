@@ -15,12 +15,10 @@ import {LabelService} from "../label-service";
   styleUrls: ['./resultaat-details.component.scss']
 })
 export class ResultaatDetailsComponent {
-  resultaatModel: ResultaatModel | undefined;
   leverancier: string = '';
   productgroep: string = '';
   kleur: string = '';
   soort: string = '';
-  ordernummer: string = '';
 
   hasProcessed: boolean = false;
   processedTrash: boolean = false;
@@ -55,9 +53,6 @@ export class ResultaatDetailsComponent {
   @Input() resultOfProcessing: string[] = [];
 
   constructor(private stofService: StofService, private klantService: KlantService, private categorieService: CategorieService, private labelService: LabelService) { }
-
-  ngOnInit(): void {
-  }
 
   public getDetails(verwerkteStofDetails: OrderModel, responeData: string[]) {
     this.processedTrash = false;

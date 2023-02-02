@@ -16,6 +16,7 @@ export class HeaderComponent {
     }
 
   }
+
   getkey(): boolean{
     return sessionStorage.getItem('key') == 'true';
   }
