@@ -2,10 +2,13 @@ import { Router } from "@angular/router";
 
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import * as jsonApi from "../../assets/api-requests.json";
 
 
 @Injectable()
 export class LoginService {
+
+  apiUrl = jsonApi;
 
   constructor(private router: Router, private http: HttpClient){}
 
@@ -40,7 +43,7 @@ export class LoginService {
     let password = document.getElementById('password').value;
 
     const headers = { 'Content-Type': 'application/json' };
-    let url =  "http://localhost:8080/api/auth/signin"
+    let url =  this.apiUrl.baseurl + "api/auth/signin"
     this.http.post<{message: string}>(url,
       {
         "username": username,
@@ -59,7 +62,7 @@ export class LoginService {
 
   auth(){
     const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
-    let url =  "http://localhost:8080/api/test/user"
+    let url =  this.apiUrl.baseurl + "api/test/user"
      // @ts-ignore
     this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
        if(String(response) == "User Content."){
@@ -76,7 +79,7 @@ export class LoginService {
 
    adminAuth(){
      const headers = { 'Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
-     let url =  "http://localhost:8080/api/test/admin"
+     let url =  this.apiUrl.baseurl + "api/test/admin"
      // @ts-ignore
      this.http.get<string>(url, {headers, responseType: 'text'}).subscribe((response) =>{
        if(String(response) == "Admin Board."){

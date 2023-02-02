@@ -1,11 +1,13 @@
 import { Router } from "@angular/router";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import {NavbarComponent} from "../../modules/core/components/navbar/navbar.component";
-import {RegistrerenComponent} from "./registreren.component";
+import * as jsonApi from "../../../assets/api-requests.json";
 
 @Injectable()
 export class RegistrerenService{
+
+  apiUrl = jsonApi;
+
   constructor(private router: Router, private http: HttpClient){}
 
 
@@ -13,12 +15,6 @@ export class RegistrerenService{
   radioChangeHandler (event: any){
     this.selectRole = event.target.value;
   }
-
-
-
-
-
-
 
   Registreer() {
     // @ts-ignore
@@ -30,7 +26,7 @@ export class RegistrerenService{
     var role = this.selectRole;
 
     const headers = { 'Content-Type': 'application/json','Authorization': 'Bearer '+sessionStorage.getItem('JWT') };
-    let url =  "http://localhost:8080/api/auth/signup"
+    let url =  this.apiUrl.baseurl + "api/auth/signup"
     this.http.post<{message: string}>(url,
       {
         "username": username,

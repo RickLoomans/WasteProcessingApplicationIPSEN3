@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ResultaatModel} from "./resultaat-model";
-import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
+// import {ReststofVerwerkenComponent} from "../reststof-verwerken.component";
 
 @Component({
   selector: 'app-resultaat-verwerken-stof',

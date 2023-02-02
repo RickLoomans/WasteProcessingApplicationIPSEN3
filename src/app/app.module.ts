@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReststofVerwerkenComponent } from './reststof-verwerken/reststof-verwerken.component';
 import { ResultaatVerwerkenStofComponent } from './reststof-verwerken/resultaat-verwerken-stof/resultaat-verwerken-stof.component';
 import { VerwerkenInputComponent } from './reststof-verwerken/verwerken-input/verwerken-input.component';
 import { AfvalComponent } from './afval/afval.component';
@@ -27,7 +26,6 @@ import {RegistrerenService} from "./admin/registreren/registreren.service";
 @NgModule({
   declarations: [
     AppComponent,
-    ReststofVerwerkenComponent,
     ResultaatVerwerkenStofComponent,
     VerwerkenInputComponent,
     ResultaatDetailsComponent,
